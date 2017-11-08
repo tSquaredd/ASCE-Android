@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_action_home"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_schedule"
+            android:icon="@drawable/ic_schedule"
+            android:title="Schedule" />
+        <item
+            android:id="@+id/nav_speakers"
+            android:icon="@drawable/ic_person_pin"
+            android:title="Speakers"/>
+        <item
+            android:id="@+id/nav_sponsors"
+            android:icon="@drawable/ic_action_business"
+            android:title="Sponsors" />
+        <item
+            android:id="@+id/nav_program"
+            android:icon="@drawable/ic_import_contacts"
+            android:title="Program" />
+
+        <item
+            android:id="@+id/nav_event_map"
+            android:icon="@drawable/ic_action_map"
+            android:title="Event Map"/>
+
+        <item
+            android:id="@+id/nav_entertainment"
+            android:icon="@drawable/ic_local_dining"
+            android:title="Entertainment"/>
+    </group>
+
+    <item android:title="Social Media">
+        <menu>
+            <item
+                android:id="@+id/nav_facebook"
+                android:icon="@drawable/ic_action_facebook"
+                android:title="Facebook" />
+            <item
+                android:id="@+id/nav_twitter"
+                android:icon="@drawable/ic_action_twitter"
+                android:title="Twitter" />
+        </menu>
+    </item>
+
+</menu>
