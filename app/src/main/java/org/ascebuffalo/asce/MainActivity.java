@@ -167,13 +167,12 @@ public class MainActivity extends AppCompatActivity
             */
         } else if(id == R.id.nav_twitter){
 
-            /* TODO: For Twitter we should check with Francis to see what kind of functionality is
-            prefered here. From the looks of the old app it seems like they just had a feed of posts
-            with the events #. Which I briefly Looked into Twitter API, should be easy
-            and I am sure there are a lot of examples and tutorials available for this.
+            fragment = new TwitterFragment();
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
-            -- TYLER
-             */
+            transaction.replace(R.id.content_frame, fragment);
+            transaction.addToBackStack(null);
+            transaction.commit();
 
         }
 
