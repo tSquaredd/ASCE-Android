@@ -1,13 +1,22 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="org.ascebuffalo.asce.ScheduleFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="org.ascebuffalo.asce.ScheduleFragment"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello Schedule Fragment" />
+  <android.support.design.widget.TabLayout
+      android:id="@+id/nav_schedule_tabs"
+      app:tabMode="fixed"
+      app:tabGravity="fill"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"/>
 
-</FrameLayout>
+  <android.support.v4.view.ViewPager
+      android:id="@+id/nav_pager"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      />
+
+</LinearLayout>
