@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity
 
 
         // intitialize home fragmet
-        Fragment fragment = new SpeakersFragment();
+        Fragment fragment = new HomeFragment();
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
         transaction.replace(R.id.content_frame, fragment);
