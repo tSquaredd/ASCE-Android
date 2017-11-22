@@ -34,6 +34,16 @@ public class SponsorsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        /*
+        TODO(3): Not sure why your using ViewPager here.
+
+        Below in getCount you are returning one. And getPageTitle just returns sponsor.
+        So its just making a one page view pager.
+
+        I'd say just get rid of it and put a recyclerView in fragment_sponsor.xml
+
+         */
         // Inflate the layout for this fragment
         View result=inflater.inflate(R.layout.fragment_sponsors, container, false);
         ViewPager pager=(ViewPager)result.findViewById(R.id.nav_pager);
@@ -82,12 +92,12 @@ public class SponsorsFragment extends Fragment {
         ArrayList<Sponsor> list = new ArrayList<>();
         Sponsor fakeEvent=new Sponsor("sponsor1", "1000","picture link");
         list.add(fakeEvent);
-        Sponsor fakeEvent1=new Sponsor("sponsor12", "1100","picture link 2");
-        list.add(fakeEvent1);
-        Sponsor fakeEvent2=new Sponsor("sponsor13", "1200","picture link 3");
-        list.add(fakeEvent2);
-        Sponsor fakeEvent3=new Sponsor("sponsor14", "1300","picture link 4");
-        list.add(fakeEvent3);
+        fakeEvent=new Sponsor("sponsor12", "1100","picture link 2");
+        list.add(fakeEvent);
+        fakeEvent=new Sponsor("sponsor13", "1200","picture link 3");
+        list.add(fakeEvent);
+        fakeEvent=new Sponsor("sponsor14", "1300","picture link 4");
+        list.add(fakeEvent);
 
         return list;
 

@@ -4,7 +4,8 @@
     android:layout_height="match_parent"
     tools:context="org.ascebuffalo.asce.SponsorsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <!-- TODO(2): Also have to update this. Dont know if you should go off of fragment_schedule.xml
+     see the TODO in SponsorsFragment-->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
