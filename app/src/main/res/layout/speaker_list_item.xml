@@ -1,28 +1,32 @@
-<RelativeLayout
-xmlns:android="http://schemas.android.com/apk/res/android"
-android:layout_width="match_parent"
-android:layout_height="wrap_content"
-android:orientation="horizontal">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
-<ImageView
-    android:id="@+id/selfie"
-    android:layout_width="60dp"
-    android:layout_height="60dp"
-    android:layout_marginStart="16dp"
-    android:layout_marginTop="8dp"
-    android:layout_marginBottom="8dp"
-    android:src="@drawable/ic_person_pin"/>
+    <ImageView
+        android:id="@+id/selfie"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_person_pin" />
 
-<TextView
-    android:id="@+id/professor_name"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_toEndOf="@+id/selfie"
-    android:layout_centerVertical="true"
-    android:layout_marginStart="20dp"
-    android:layout_marginEnd="16dp"
-    android:textSize="15sp"
-    android:text="The name of the professor"/>
+    <TextView
+        android:id="@+id/professor_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="18dp"
+        android:layout_toEndOf="@+id/selfie"
+        android:text="The name of the professor"
+        android:textAppearance="?android:textAppearanceSmall"
+        android:textColor="#111"/>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@id/selfie"
+        android:background="#EEEEEE" />
 
 </RelativeLayout>
