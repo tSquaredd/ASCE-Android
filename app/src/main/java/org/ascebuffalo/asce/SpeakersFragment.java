@@ -39,7 +39,7 @@ public class SpeakersFragment extends Fragment {
 
         return root;
     }
-
+//sample data
     public List<Speaker> getData() {
         List<Speaker> data = new ArrayList<>();
         data.add(new Speaker(R.drawable.ic_person_pin, "Nancy Berson"));
