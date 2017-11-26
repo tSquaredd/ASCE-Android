@@ -97,6 +97,7 @@ public class MainActivity extends AppCompatActivity
             // Handle the camera action
             fragment = new HomeFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            setTitle("Home");
 
             transaction.replace(R.id.content_frame, fragment);
             transaction.addToBackStack(null);
@@ -106,6 +107,7 @@ public class MainActivity extends AppCompatActivity
 
             fragment = new ScheduleFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            setTitle("Schedule");
 
             transaction.replace(R.id.content_frame, fragment);
             transaction.addToBackStack(null);
@@ -115,6 +117,7 @@ public class MainActivity extends AppCompatActivity
 
             fragment = new SpeakersFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            setTitle("Speakers");
 
             transaction.replace(R.id.content_frame, fragment);
             transaction.addToBackStack(null);
@@ -124,6 +127,7 @@ public class MainActivity extends AppCompatActivity
 
             fragment = new SponsorsFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            setTitle("Sponsors");
 
             transaction.replace(R.id.content_frame, fragment);
             transaction.addToBackStack(null);
@@ -134,6 +138,7 @@ public class MainActivity extends AppCompatActivity
 
             fragment = new ProgramFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            setTitle("Program");
 
             transaction.replace(R.id.content_frame, fragment);
             transaction.addToBackStack(null);
@@ -143,6 +148,7 @@ public class MainActivity extends AppCompatActivity
 
             fragment = new EventMapFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            setTitle("Event Map");
 
             transaction.replace(R.id.content_frame, fragment);
             transaction.addToBackStack(null);
@@ -152,6 +158,7 @@ public class MainActivity extends AppCompatActivity
 
             fragment = new EntertainmentFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            setTitle("Entertainment");
 
             transaction.replace(R.id.content_frame, fragment);
             transaction.addToBackStack(null);
@@ -176,7 +183,7 @@ public class MainActivity extends AppCompatActivity
 
             fragment = new TwitterFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-
+            setTitle("twitter");
             transaction.replace(R.id.content_frame, fragment);
             transaction.addToBackStack(null);
             transaction.commit();

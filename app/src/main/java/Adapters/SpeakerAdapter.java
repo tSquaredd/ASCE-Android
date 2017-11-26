@@ -1,6 +1,9 @@
 package Adapters;
 
 import android.content.Context;
+import android.content.Intent;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.ascebuffalo.asce.R;
+import org.ascebuffalo.asce.Speaker_profile;
 
 import java.util.Collections;
 import java.util.List;
@@ -45,13 +49,24 @@ public class SpeakerAdapter extends RecyclerView.Adapter<SpeakerAdapter.MyViewHo
     public int getItemCount() {
         return data.size();
     }
-    class MyViewHolder extends RecyclerView.ViewHolder{
+    class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         ImageView selfie;
         TextView name;
         public MyViewHolder(View itemView) {
             super(itemView);
+            itemView.setOnClickListener(this);
             selfie = itemView.findViewById(R.id.selfie);
             name = itemView.findViewById(R.id.professor_name);
+        }
+
+        @Override
+        public void onClick(View v) {
+            int position = getAdapterPosition();
+            Speaker speaker =data.get(position);
+            AppCompatActivity activity = (AppCompatActivity) v.getContext();
+            Intent intent = new Intent(activity,Speaker_profile.class);
+            intent.putExtra("speaker",speaker);
+            activity.startActivity(intent);
         }
     }
 }

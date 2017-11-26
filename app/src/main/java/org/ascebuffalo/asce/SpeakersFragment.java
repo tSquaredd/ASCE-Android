@@ -1,11 +1,15 @@
 package org.ascebuffalo.asce;
 
 
+import android.app.Activity;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -37,9 +41,14 @@ public class SpeakersFragment extends Fragment {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
+
+
+
         return root;
     }
-//sample data
+
+
+    //sample data
     public List<Speaker> getData() {
         List<Speaker> data = new ArrayList<>();
         data.add(new Speaker(R.drawable.ic_person_pin, "Nancy Berson"));
