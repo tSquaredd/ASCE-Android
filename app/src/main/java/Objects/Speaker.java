@@ -10,17 +10,21 @@ import android.os.Parcelable;
 public class Speaker implements Parcelable {
     private int selfie;
     private String name;
+    private int first;
 
-    public Speaker(int selfie, String name) {
+    public Speaker(int selfie, String name, int appear) {
         this.selfie = selfie;
         this.name = name;
+        this.first = appear;
     }
 
     public Speaker(Parcel input) {
         selfie = input.readInt();
         name = input.readString();
+        first = input.readInt();
     }
 //
+
 
     @Override
     public int describeContents() {
@@ -31,6 +35,7 @@ public class Speaker implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(getSelfie());
         dest.writeString(getName());
+        dest.writeInt(isFirst());
     }
 
     public static final Creator<Speaker> CREATOR = new Parcelable.Creator<Speaker>() {
@@ -60,5 +65,13 @@ public class Speaker implements Parcelable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public int isFirst() {
+        return first;
+    }
+
+    public void setFirst(int first) {
+        this.first = first;
     }
 }
