@@ -8,6 +8,9 @@
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView_speaker"
         android:layout_width="match_parent"
+        android:scrollbars="vertical"
+        android:scrollbarThumbVertical="@android:color/darker_gray"
+        android:scrollbarSize="5dp"
         android:layout_height="wrap_content"/>
 
 </FrameLayout>

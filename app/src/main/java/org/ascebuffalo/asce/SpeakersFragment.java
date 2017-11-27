@@ -14,10 +14,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import Adapters.SpeakerAdapter;
 import Objects.Speaker;
+
 
 
 /**
@@ -36,12 +39,12 @@ public class SpeakersFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_speakers, container, false);
+
         RecyclerView recyclerView = root.findViewById(R.id.recyclerView_speaker);
         SpeakerAdapter adapter = new SpeakerAdapter(getActivity(), getData());
         recyclerView.setAdapter(adapter);
+        recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-
-
 
 
         return root;
@@ -61,6 +64,8 @@ public class SpeakersFragment extends Fragment {
         data.add(new Speaker(R.drawable.ic_person_pin, "Norma Jean"));
         data.add(new Speaker(R.drawable.ic_person_pin, "Christian Muntean"));
         data.add(new Speaker(R.drawable.ic_person_pin, "Michael Pierce"));
+
+        Collections.sort(data,(o1,o2)->o1.getName().charAt(0)-o2.getName().charAt(0));
         return data;
     }
 
