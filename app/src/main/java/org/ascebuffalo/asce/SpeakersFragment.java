@@ -22,7 +22,6 @@ import Adapters.SpeakerAdapter;
 import Objects.Speaker;
 
 
-
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -43,7 +42,6 @@ public class SpeakersFragment extends Fragment {
         RecyclerView recyclerView = root.findViewById(R.id.recyclerView_speaker);
         SpeakerAdapter adapter = new SpeakerAdapter(getActivity(), getData());
         recyclerView.setAdapter(adapter);
-        recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
 
@@ -54,30 +52,30 @@ public class SpeakersFragment extends Fragment {
     //sample data
     public List<Speaker> getData() {
         List<Speaker> data = new ArrayList<>();
-        data.add(new Speaker(R.drawable.ic_person_pin, "Nancy Berson",1));
-        data.add(new Speaker(R.drawable.ic_person_pin, "Nancy Berson",0));
-        data.add(new Speaker(R.drawable.ic_person_pin, "Kelly Doyle",1));
-        data.add(new Speaker(R.drawable.ic_person_pin, "Kelly Doyle",0));
-        data.add(new Speaker(R.drawable.ic_person_pin, "Tapas Dutta",1));
-        data.add(new Speaker(R.drawable.ic_person_pin, "Tapas Dutta",0));
-        data.add(new Speaker(R.drawable.ic_person_pin, "Nick Homerding",0));
-        data.add(new Speaker(R.drawable.ic_person_pin, "Sam Kito",1));
-        data.add(new Speaker(R.drawable.ic_person_pin, "Sam Kito",0));
-        data.add(new Speaker(R.drawable.ic_person_pin, "Jennifer Lawrence",1));
-        data.add(new Speaker(R.drawable.ic_person_pin, "Jennifer Lawrence",0));
-        data.add(new Speaker(R.drawable.ic_person_pin, "Blaine Leonard",1));
-        data.add(new Speaker(R.drawable.ic_person_pin, "Blaine Leonard",0));
-        data.add(new Speaker(R.drawable.ic_person_pin, "Norma Jean",0));
-        data.add(new Speaker(R.drawable.ic_person_pin, "Christian Muntean",1));
-        data.add(new Speaker(R.drawable.ic_person_pin, "Michael Pierce",1));
-        data.add(new Speaker(R.drawable.ic_person_pin, "Christian Muntean",0));
-        data.add(new Speaker(R.drawable.ic_person_pin, "Michael Pierce",0));
+        data.add(new Speaker(R.drawable.ic_person_pin, "Nancy Berson", 1));
+        data.add(new Speaker(R.drawable.ic_person_pin, "Nancy Berson", 0));
+        data.add(new Speaker(R.drawable.ic_person_pin, "Kelly Doyle", 1));
+        data.add(new Speaker(R.drawable.ic_person_pin, "Kelly Doyle", 0));
+        data.add(new Speaker(R.drawable.ic_person_pin, "Tapas Dutta", 1));
+        data.add(new Speaker(R.drawable.ic_person_pin, "Tapas Dutta", 0));
+        data.add(new Speaker(R.drawable.ic_person_pin, "Nick Homerding", 0));
+        data.add(new Speaker(R.drawable.ic_person_pin, "Sam Kito", 1));
+        data.add(new Speaker(R.drawable.ic_person_pin, "Sam Kito", 0));
+        data.add(new Speaker(R.drawable.ic_person_pin, "Jennifer Lawrence", 1));
+        data.add(new Speaker(R.drawable.ic_person_pin, "Jennifer Lawrence", 0));
+        data.add(new Speaker(R.drawable.ic_person_pin, "Blaine Leonard", 1));
+        data.add(new Speaker(R.drawable.ic_person_pin, "Blaine Leonard", 0));
+        data.add(new Speaker(R.drawable.ic_person_pin, "Norma Jean", 0));
+        data.add(new Speaker(R.drawable.ic_person_pin, "Christian Muntean", 1));
+        data.add(new Speaker(R.drawable.ic_person_pin, "Michael Pierce", 1));
+        data.add(new Speaker(R.drawable.ic_person_pin, "Christian Muntean", 0));
+        data.add(new Speaker(R.drawable.ic_person_pin, "Michael Pierce", 0));
 
         Collections.sort(data, (o1, o2) -> {
-            if (o1.getName().charAt(0)-o2.getName().charAt(0)==0){
+            if (o1.getName().charAt(0) - o2.getName().charAt(0) == 0) {
                 return o2.isFirst() - o1.isFirst();
             }
-            return o1.getName().charAt(0)-o2.getName().charAt(0);
+            return o1.getName().charAt(0) - o2.getName().charAt(0);
         });
         return data;
     }
