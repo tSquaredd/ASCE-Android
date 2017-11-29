@@ -16,12 +16,22 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.SEARCH" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
         </activity>
-        <activity android:name=".Speaker_profile"
+        <activity
+            android:name=".Speaker_profile"
             android:label="Profile">
+
+        </activity>
+        <activity android:name=".SearchableActivity">
+
         </activity>
     </application>
 
