@@ -17,13 +17,24 @@
         android:paddingEnd="16dp"/>
 
     <TextView
+        android:id="@+id/tv_event_sections"
+        android:textAppearance="?android:textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="ABCD / EFGY/ DGAF"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:visibility="gone"/>
+
+    <TextView
         android:id="@+id/tv_event_location"
         android:textAppearance="?android:textAppearanceSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:text="Super Awesome Ballroom"
         android:paddingStart="16dp"
-        android:paddingEnd="16dp"/>
+        android:paddingEnd="16dp"
+        android:visibility="gone"/>
 
     <TextView
         android:id="@+id/tv_event_time"
@@ -32,14 +43,17 @@
         android:layout_height="wrap_content"
         tools:text="2:00 - 2:45"
         android:paddingStart="16dp"
-        android:paddingEnd="16dp"/>
+        android:paddingEnd="16dp"
+        android:paddingBottom="4dp"/>
+
+
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#666"
        android:layout_marginTop="16dp"
-        android:paddingBottom="16dp"/>
+        android:paddingBottom="16dp" />
 
 
 

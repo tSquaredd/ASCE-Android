@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -18,7 +19,8 @@ import Objects.ScheduleEvent;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class DayScheduleFragment extends Fragment {
+public class DayScheduleFragment extends Fragment
+implements ScheduleEventAdapter.ScheduleEventOnClickHandler{
 
     RecyclerView mRecyclerView;
     ScheduleEventAdapter mAdapter;
@@ -50,7 +52,7 @@ public class DayScheduleFragment extends Fragment {
 
         mRecyclerView.setHasFixedSize(false);
 
-        mAdapter = new ScheduleEventAdapter(mEventList);
+        mAdapter = new ScheduleEventAdapter(mEventList, this);
 
         mRecyclerView.setAdapter(mAdapter);
 
@@ -59,8 +61,8 @@ public class DayScheduleFragment extends Fragment {
     }
 
 
-
-
-
-
+    @Override
+    public void onClick(ScheduleEvent event) {
+        Toast.makeText(getContext(), "HI", Toast.LENGTH_LONG).show();
+    }
 }

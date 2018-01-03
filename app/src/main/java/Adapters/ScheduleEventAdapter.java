@@ -25,9 +25,16 @@ public class ScheduleEventAdapter extends RecyclerView.Adapter<ScheduleEventAdap
     private ArrayList<ScheduleEvent> mList;
     private int mNumItems;
 
-    public ScheduleEventAdapter( ArrayList<ScheduleEvent> list){
+    final private ScheduleEventOnClickHandler mClickHandler;
+
+    public interface ScheduleEventOnClickHandler{
+        void onClick(ScheduleEvent event);
+    }
+
+    public ScheduleEventAdapter( ArrayList<ScheduleEvent> list, ScheduleEventOnClickHandler handler){
         mList = list;
         mNumItems = list.size();
+        mClickHandler = handler;
     }
 
 
@@ -44,13 +51,15 @@ public class ScheduleEventAdapter extends RecyclerView.Adapter<ScheduleEventAdap
 
     }
 
+
     @Override
     public void onBindViewHolder(EventViewHolder holder, int position) {
         holder.bind(mList.get(position));
     }
 
 
-    // May need to use onBindViewHolder
+
+
 
 
 
@@ -66,6 +75,7 @@ public class ScheduleEventAdapter extends RecyclerView.Adapter<ScheduleEventAdap
         TextView titleTextView;
         TextView timeTextView;
         TextView locationTextView;
+        TextView sectionsTextView;
 
         public EventViewHolder(View itemView){
             super(itemView);
@@ -73,14 +83,23 @@ public class ScheduleEventAdapter extends RecyclerView.Adapter<ScheduleEventAdap
             titleTextView = (TextView)itemView.findViewById(R.id.tv_event_name);
             timeTextView = (TextView)itemView.findViewById(R.id.tv_event_time);
             locationTextView = (TextView)itemView.findViewById(R.id.tv_event_location);
+            sectionsTextView = (TextView)itemView.findViewById(R.id.tv_event_sections);
         }
 
         void bind(ScheduleEvent event){
             titleTextView.setText(event.getTitle());
             String timeInterval = event.getStartTime() + " - " +event.getEndTime();
             timeTextView.setText(timeInterval);
-            locationTextView.setText(event.getLocation());
+            if(event.getLocation() != null){
+                locationTextView.setText(event.getLocation());
+                locationTextView.setVisibility(View.VISIBLE);
+            }
 
+
+            if(event.getSections() != null) {
+                sectionsTextView.setText(event.getSections());
+                sectionsTextView.setVisibility(View.VISIBLE);
+            }
         }
     }
 

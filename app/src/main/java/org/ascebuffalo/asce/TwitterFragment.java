@@ -15,6 +15,8 @@ import com.twitter.sdk.android.tweetui.SearchTimeline;
 import com.twitter.sdk.android.tweetui.TweetTimelineRecyclerViewAdapter;
 
 
+//TODO: handle no internet connection
+
 /**
  * A simple {@link Fragment} subclass.
  */

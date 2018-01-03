@@ -1,0 +1,68 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context="org.ascebuffalo.asce.EventDetailsFragment">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/tv_event_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textSize="28sp"
+        tools:text="Welcome" />
+
+    <TextView
+        android:textAppearance="?android:textAppearanceMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_event_location"
+        android:layout_below="@+id/tv_event_name"
+        tools:text="Where: Ballroom"/>
+
+    <TextView
+        android:textAppearance="?android:textAppearanceMedium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_event_time"
+        tools:text="When: 4:30 - 5:30"
+        android:layout_below="@+id/tv_event_location"/>
+
+    <TextView
+        android:textAppearance="?android:textAppearanceMedium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_event_details_header"
+        android:layout_below="@+id/tv_event_time"
+        tools:text="Info:"
+        android:paddingTop="16dp"/>
+
+    <TextView
+        android:id="@+id/tv_event_information"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_event_details_header"
+        tools:text="Etsy twee authentic hashtag tofu, hot chicken kale chips artisan snackwave gentrify pabst cray farm-to-table. VHS la croix cliche mlkshk thundercats. Pitchfork PBR B mlkshk, helvetica hexagon hell of paleo edison bulb photo booth slow-carb. Thundercats tacos retro fanny pack snackwave pork belly typewriter street art. Blue bottle you probably haven't heard of them thundercats offal."/>
+
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_speaker_list"
+        android:layout_below="@id/tv_event_information"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"/>
+    <!-- add to agenda -->
+    <Button
+
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:text="+"/>
+
+</RelativeLayout>
+</ScrollView>
