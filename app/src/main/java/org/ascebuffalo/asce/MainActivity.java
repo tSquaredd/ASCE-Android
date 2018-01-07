@@ -1,5 +1,7 @@
 package org.ascebuffalo.asce;
 
+import android.animation.ObjectAnimator;
+import android.animation.StateListAnimator;
 import android.app.SearchManager;
 import android.content.Context;
 import android.os.Bundle;
@@ -69,7 +71,7 @@ public class MainActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
-        itemToHide = menu.findItem(R.id.search);
+        itemToHide = menu.findItem(R.id.action_search);
         itemToHide.setVisible(false);
 
         return true;

@@ -2,7 +2,6 @@ package Adapters;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -16,10 +15,10 @@ import org.ascebuffalo.asce.R;
 import org.ascebuffalo.asce.Speaker_profile;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
+
 
 import Objects.Speaker;
 
@@ -139,4 +138,10 @@ public class SpeakerAdapter extends RecyclerView.Adapter<SpeakerAdapter.MyViewHo
 //        Log.d("position", position + " name " + data.get(position - count).getName() + " with index " + count);
         return TYPE_LIST;
     }
+    public void setFilter(List<Speaker> SpeakerList) {
+        data = new ArrayList<>();
+        data.addAll(SpeakerList);
+        notifyDataSetChanged();
+    }
+
 }

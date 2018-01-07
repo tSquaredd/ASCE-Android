@@ -4,7 +4,7 @@
     android:background="@drawable/custom_ripple_effect"
     android:clickable="true">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/selfie"
         android:layout_width="60dp"
         android:layout_height="60dp"

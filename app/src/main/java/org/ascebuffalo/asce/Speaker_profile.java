@@ -1,12 +1,14 @@
 package org.ascebuffalo.asce;
 
-import android.support.v4.app.NavUtils;
+import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.ImageView;
-import android.widget.TextView;
+
 
 import Objects.Speaker;
 
@@ -16,20 +18,34 @@ public class Speaker_profile extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_speaker_profile);
+        setContentView(R.layout.speaker_detail);
+        Toolbar toolbar = findViewById(R.id.main_toolbar);
+        setSupportActionBar(toolbar);
 
-        ImageView imageView = findViewById(R.id.speakers_image);
-        TextView textView = findViewById(R.id.speakers_text);
+        CollapsingToolbarLayout collapsingToolbarLayout =  findViewById(R.id.toolbar_layout);
+        collapsingToolbarLayout.setTitleEnabled(true);
+
+        ImageView imageView = findViewById(R.id.main_backdrop);
+//        TextView textView = findViewById(R.id.speakers_text);
         Bundle bundle = getIntent().getExtras();
+
         Speaker speaker = bundle.getParcelable("speaker");
         if(speaker != null){
             Log.d("speaker init", speaker.getName() + " with selfie " + speaker.getSelfie());
 
             imageView.setImageResource(speaker.getSelfie());
-            textView.setText(speaker.getName());
+            collapsingToolbarLayout.setTitle(speaker.getName());
+//            textView.setText(speaker.getName());
         }
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
+
+
+
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setHomeButtonEnabled(true);
+        }
+
     }
 
     @Override

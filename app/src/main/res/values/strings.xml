@@ -11,8 +11,13 @@
 
     <string name="com.twitter.sdk.android.CONSUMER_KEY">0YU6QwzQTfJAsXQ1x0tGRoku0</string>
     <string name="com.twitter.sdk.android.CONSUMER_SECRET">TSVmp7DfPxXj9UljJQKOXFpWzpsKUQ46wDyh0ehErXNnqipWk0</string>
-    <string name="search">search</string>
-    <string name="search_hint">Search Speaker</string>
+    <string name="search">Search Speaker</string>
+    <string name="search_hint">Search</string>
+
+    <string-array name="floor">
+        <item>  1st Floor </item>
+        <item>  2nd Floor </item>
+    </string-array>
 
 
 </resources>
