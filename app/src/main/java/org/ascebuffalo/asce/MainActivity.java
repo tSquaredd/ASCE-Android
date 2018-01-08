@@ -1,5 +1,6 @@
 package org.ascebuffalo.asce;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -15,6 +16,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
+import Objects.Sponsor;
+import org.ascebuffalo.asce.SponsorFragment;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -187,8 +193,28 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+    public void test_msg(View view){
+        ArrayList<Sponsor> tp= SponsorsFragment.testdata();
+        TextView tvname=(TextView)view.findViewById(R.id.tv_sp_name);
+        String name=tvname.getText().toString();
+        int ID=0;
+        for(int i =0; i<tp.size();i++){
+            if(tp.get(i).getName()==name){
+                ID=i;
+            }
+        }
+
+        TextView tvdes=(TextView)view.findViewById(R.id.tv_sp_des);
+        String y = tvdes.getText().toString();
+        if(y!=""){
+            tvdes.setText("");
+        }
+        else{
+            tvdes.setText(tp.get(ID).getdes());
+        }
 
 
+    }
 
 
 }

@@ -79,6 +79,7 @@ public class ScheduleFragment extends Fragment {
             }
 
             args.putParcelableArrayList("events", eventList);
+
             fragment.setArguments(args);
             return fragment;
         }

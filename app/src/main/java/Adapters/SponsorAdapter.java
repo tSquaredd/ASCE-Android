@@ -1,18 +1,21 @@
 package Adapters;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.ascebuffalo.asce.MainActivity;
 import org.ascebuffalo.asce.R;
+import org.ascebuffalo.asce.SponsorsFragment;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import Objects.ScheduleEvent;
 import Objects.Sponsor;
 
 
@@ -32,7 +35,7 @@ public class SponsorAdapter extends RecyclerView.Adapter<SponsorAdapter.EventVie
     @Override
     public SponsorAdapter.EventViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();
-        int layoutIdForListItem = R.layout.fragment_sponsors;
+        int layoutIdForListItem = R.layout.fragment_sponsors_list_item;
         LayoutInflater inflater = LayoutInflater.from(context);
         boolean shouldAttachToParentImmediately = false;
         View view = inflater.inflate(layoutIdForListItem, parent, shouldAttachToParentImmediately);
@@ -61,23 +64,30 @@ public class SponsorAdapter extends RecyclerView.Adapter<SponsorAdapter.EventVie
 
     class EventViewHolder extends RecyclerView.ViewHolder{
 
-        TextView titleTextView;
-        TextView timeTextView;
-        TextView locationTextView;
+        TextView nameTextView;
+        ImageView picTextView;
+        TextView moneyTextView;
+        TextView desTextView;
 
         public EventViewHolder(View itemView){
             super(itemView);
 
-            titleTextView = (TextView)itemView.findViewById(R.id.tv_event_name);
-            timeTextView = (TextView)itemView.findViewById(R.id.tv_event_time);
-            locationTextView = (TextView)itemView.findViewById(R.id.tv_event_location);
+            nameTextView = (TextView)itemView.findViewById(R.id.tv_sp_name);
+            picTextView = (ImageView) itemView.findViewById(R.id.tv_sp_pic);
+            moneyTextView = (TextView)itemView.findViewById(R.id.tv_sp_money);
+            desTextView = (TextView)itemView.findViewById(R.id.tv_sp_des);
         }
 
         void bind(Sponsor event){
-            titleTextView.setText(event.getName());
-            timeTextView.setText(event.getPic());
-            locationTextView.setText(event.getMoney());
+            nameTextView.setText(event.getName());
 
+
+
+            picTextView.setImageResource(event.getPic());
+
+
+            moneyTextView.setText(event.getMoney());
+            desTextView.setText("");
         }
     }
 

@@ -10,32 +10,34 @@ import android.os.Parcelable;
 public class Sponsor implements Parcelable{
 
     private String Sname;
-    private String Spic;
+    private int Spic;
     private String Smoney;
-
-    public Sponsor(String name, String pic, String money) {
+    private String Sdes;
+    public Sponsor(String name, int pic, String money,String des) {
         this.Sname = name;
         this.Spic = pic;
         this.Smoney = money;
+        this.Sdes = des;
 
     }
 
     public Sponsor(Parcel in){
         Sname = in.readString();
-        Spic = in.readString();
+        Spic = in.readInt();
         Smoney = in.readString();
+        Sdes = in.readString();
     }
 
 
-    public static final Parcelable.Creator<ScheduleEvent> CREATOR = new Parcelable.Creator<ScheduleEvent>() {
+    public static final Parcelable.Creator<Sponsor> CREATOR = new Creator<Sponsor>() {
         @Override
-        public ScheduleEvent createFromParcel(Parcel in) {
-            return new ScheduleEvent(in);
+        public Sponsor createFromParcel(Parcel in) {
+            return new Sponsor(in);
         }
 
         @Override
-        public ScheduleEvent[] newArray(int size) {
-            return new ScheduleEvent[size];
+        public Sponsor[] newArray(int size) {
+            return new Sponsor[size];
         }
     };
 
@@ -47,8 +49,9 @@ public class Sponsor implements Parcelable{
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(getName());
-        dest.writeString(getPic());
+        dest.writeInt(getPic());
         dest.writeString(getMoney());
+        dest.writeString(getdes());
           }
 
 
@@ -61,11 +64,11 @@ public class Sponsor implements Parcelable{
         Sname = title;
     }
 
-    public String getPic() {
+    public int getPic() {
         return Spic;
     }
 
-    public void setPic(String startTime) {
+    public void setPic(int startTime) {
         Spic = startTime;
     }
 
@@ -77,7 +80,9 @@ public class Sponsor implements Parcelable{
         Smoney = endTime;
     }
 
+    public void  setdes(String des){Sdes=des;}
 
+    public String getdes(){return Sdes;}
 
 }
 
