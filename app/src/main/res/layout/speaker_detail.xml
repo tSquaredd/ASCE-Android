@@ -22,6 +22,7 @@
             android:layout_height="match_parent"
             android:fitsSystemWindows="true"
             app:title="Test"
+            app:expandedTitleTextAppearance="@style/TextAppearance.AppCompat.Headline"
             app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
             app:contentScrim="?attr/colorPrimary"
             app:toolbarId="@+id/toolbar"
@@ -48,28 +49,35 @@
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        >
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
         <LinearLayout
+            android:id="@+id/title_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
             <TextView
                 android:id="@+id/speakers_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="bio"
                 android:textAppearance="?android:textAppearanceMedium"
-                android:text="bio" />
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#111"/>
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:textAppearanceMedium"
-                android:text="meeting"/>
+                android:text="meeting"
+                android:textAppearance="?android:textAppearanceMedium" />
 
         </LinearLayout>
-
 
 
     </android.support.v4.widget.NestedScrollView>

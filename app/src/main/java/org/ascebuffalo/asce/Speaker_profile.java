@@ -36,7 +36,7 @@ public class Speaker_profile extends AppCompatActivity {
 
             imageView.setImageResource(speaker.getSelfie());
             collapsingToolbarLayout.setTitle(speaker.getName());
-            textView.setText(speaker.getBio());
+//            textView.setText(speaker.getBio());
         }
 
 
