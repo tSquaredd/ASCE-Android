@@ -35,7 +35,9 @@ public class SponsorAdapter extends RecyclerView.Adapter<SponsorAdapter.EventVie
     @Override
     public SponsorAdapter.EventViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();
+
         int layoutIdForListItem = R.layout.fragment_sponsors_list_item;
+
         LayoutInflater inflater = LayoutInflater.from(context);
         boolean shouldAttachToParentImmediately = false;
         View view = inflater.inflate(layoutIdForListItem, parent, shouldAttachToParentImmediately);
