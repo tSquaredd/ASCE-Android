@@ -23,7 +23,7 @@ public class ScheduleEventAdapter extends RecyclerView.Adapter<ScheduleEventAdap
     private static final String LOG_TAG = ScheduleEvent.class.getName();
 
     private ArrayList<ScheduleEvent> mList;
-    private int mNumItems;
+
 
     final private ScheduleEventOnClickHandler mClickHandler;
 
@@ -33,7 +33,6 @@ public class ScheduleEventAdapter extends RecyclerView.Adapter<ScheduleEventAdap
 
     public ScheduleEventAdapter( ArrayList<ScheduleEvent> list, ScheduleEventOnClickHandler handler){
         mList = list;
-        mNumItems = list.size();
         mClickHandler = handler;
     }
 
@@ -58,19 +57,13 @@ public class ScheduleEventAdapter extends RecyclerView.Adapter<ScheduleEventAdap
     }
 
 
-
-
-
-
-
-
     @Override
     public int getItemCount() {
-        return mNumItems;
+        return mList.size();
     }
 
 
-    class EventViewHolder extends RecyclerView.ViewHolder{
+    public class EventViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         TextView titleTextView;
         TextView timeTextView;
@@ -84,6 +77,8 @@ public class ScheduleEventAdapter extends RecyclerView.Adapter<ScheduleEventAdap
             timeTextView = (TextView)itemView.findViewById(R.id.tv_event_time);
             locationTextView = (TextView)itemView.findViewById(R.id.tv_event_location);
             sectionsTextView = (TextView)itemView.findViewById(R.id.tv_event_sections);
+
+            itemView.setOnClickListener(this);
         }
 
         void bind(ScheduleEvent event){
@@ -100,6 +95,14 @@ public class ScheduleEventAdapter extends RecyclerView.Adapter<ScheduleEventAdap
                 sectionsTextView.setText(event.getSections());
                 sectionsTextView.setVisibility(View.VISIBLE);
             }
+        }
+
+        @Override
+        public void onClick(View v) {
+            int adapterPosition = getAdapterPosition();
+            ScheduleEvent event = mList.get(adapterPosition);
+            mClickHandler.onClick(event);
+
         }
     }
 

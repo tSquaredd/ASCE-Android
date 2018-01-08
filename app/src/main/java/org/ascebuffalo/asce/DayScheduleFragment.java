@@ -1,6 +1,8 @@
 package org.ascebuffalo.asce;
 
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -63,6 +65,11 @@ implements ScheduleEventAdapter.ScheduleEventOnClickHandler{
 
     @Override
     public void onClick(ScheduleEvent event) {
-        Toast.makeText(getContext(), "HI", Toast.LENGTH_LONG).show();
+        Context context = getContext();
+        Class destinationClass = EventDetailsActivity.class;
+        Intent intent = new Intent(context, destinationClass);
+        intent.putExtra("event", event);
+        startActivity(intent);
+
     }
 }

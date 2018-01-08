@@ -165,4 +165,8 @@ public class ScheduleEvent implements Parcelable{
     public void setPanelists(String[] panelists) {
         this.panelists = panelists;
     }
+
+    public String getTimeInterval(){
+        return startTime + " - " + endTime;
+    }
 }

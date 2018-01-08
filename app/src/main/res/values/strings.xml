@@ -7,14 +7,11 @@
     <string name="action_settings">Settings</string>
 
 
-
     <string name="com.twitter.sdk.android.CONSUMER_KEY">0YU6QwzQTfJAsXQ1x0tGRoku0</string>
     <string name="com.twitter.sdk.android.CONSUMER_SECRET">TSVmp7DfPxXj9UljJQKOXFpWzpsKUQ46wDyh0ehErXNnqipWk0</string>
 
 
-
-    <!-- Presenter / Moderator / Leader Names and Titles -->
-
+    <string name="description">Description:</string>
 
 
 </resources>
