@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 
 import Objects.Speaker;
@@ -26,7 +27,7 @@ public class Speaker_profile extends AppCompatActivity {
         collapsingToolbarLayout.setTitleEnabled(true);
 
         ImageView imageView = findViewById(R.id.main_backdrop);
-//        TextView textView = findViewById(R.id.speakers_text);
+        TextView textView = findViewById(R.id.speakers_text);
         Bundle bundle = getIntent().getExtras();
 
         Speaker speaker = bundle.getParcelable("speaker");
@@ -35,7 +36,7 @@ public class Speaker_profile extends AppCompatActivity {
 
             imageView.setImageResource(speaker.getSelfie());
             collapsingToolbarLayout.setTitle(speaker.getName());
-//            textView.setText(speaker.getName());
+            textView.setText(speaker.getBio());
         }
 
 

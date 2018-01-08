@@ -18,6 +18,41 @@
         <item>  1st Floor </item>
         <item>  2nd Floor </item>
     </string-array>
+    
+    <string name="Bethany_Mazur">
+        J.D., Director of Alumni and Constituent Engagement -University at Buffalo
+    </string>
+
+    <string name="Chuck_Black"> P.E., M.ASCE Region 4 Director </string>
+
+    <string name="Charlie_Mumford"> Civil Engineer 1, AECOM </string>
+    <string name="Don_Wittmer"> P.E., M.ASCE, Chair, Leader Training Committee </string>
+    <string name="Francis_Mahaney"> E.I.T., A.M.ASCE, Buffalo Section President-elect </string>
+    <string name="Greg_Kuklinski"> P.E., M.ASCE, Leader Training Committee </string>
+    <string name="Jason_Havens"> P.E., M.ASCE, Buffalo Section President </string>
+    <string name="Jennifer_Lawrence"> Aff.M.ASCE, Senior Manager, Geographic Services </string>
+    <string name="Jesse_Gormley"> P.E., ENV SP, M.ASCE, Committee on Younger Members </string>
+    <string name="John_Casana"> P.E., D.WRE, LEED AP, F.ASCE, Region 2 Director </string>
+    <string name="Jason_Lang"> M.BA, CPA, Defense Contract Audit Agency </string>
+    <string name="Kristina_Swallow"> P.E., ENV SP, F.ASCE, ASCE 2018 President </string>
+    <string name="Kelly_Dooley"> P.E., M.ASCE, Director, Raise the Bar </string>
+    <string name="Michael_J_Finn"> P.E., City Engineer, City of Buffalo DPW </string>
+    <string name="Maria_Lehman"> P.E., F.ASCE, Director of Strategic Initiatives,Ecology &amp; Environment, Inc. </string>
+    <string name="Melissa_Burns"> P.E., M.ASCE </string>
+    <string name="Nancy_Berson"> Aff.M.ASCE, Director, Geographic Services </string>
+    <string name="Peter_Moore"> P.E., F.ASCE, Region 5 Director </string>
+    <string name="Robin_Kemper"> P.E., LEED AP, F.SEI, F.ASCE, 2018 ASCE President-elect </string>
+    <string name="Raosanne_Frandina"> P.E., L.S., Frandina Engineering And Land Surveying, P.C.Stacy M. Kubit, P.E., WSP </string>
+    <string name="Shawn_Kelley"> Ph.D., P.E., M.ASCE, Leader Training Committee </string>
+    <string name="Tony_Cioffi"> P.E., M.ASCE Region 1 Director </string>
+    <string name="Tom_Smith"> ENV SP, CAE, F.ASCE, Executive Director </string>
 
 
+
+
+    <string name= "Bio">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+		In mollis est vitae erat laoreet consectetur. Mauris dui mauris,
+		dictum vel egestas vel, porta sed ante. Phasellus congue viverra ipsum,
+    </string>
 </resources>

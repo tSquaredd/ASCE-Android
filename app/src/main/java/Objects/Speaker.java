@@ -11,17 +11,25 @@ public class Speaker implements Parcelable {
     private int selfie;
     private String name;
     private int first;
+    private String position;
+    private String bio;
 
-    public Speaker(int selfie, String name, int appear) {
+    public Speaker(int selfie, String name, int appear, String position, String bio) {
         this.selfie = selfie;
         this.name = name;
         this.first = appear;
+        this.position = position;
+        this.bio = bio;
     }
+
+
 
     public Speaker(Parcel input) {
         selfie = input.readInt();
         name = input.readString();
         first = input.readInt();
+        position = input.readString();
+        bio = input.readString();
     }
 //
 
@@ -36,6 +44,9 @@ public class Speaker implements Parcelable {
         dest.writeInt(getSelfie());
         dest.writeString(getName());
         dest.writeInt(isFirst());
+        dest.writeString(getPosition());
+        dest.writeString(getBio());
+
     }
 
     public static final Creator<Speaker> CREATOR = new Parcelable.Creator<Speaker>() {
@@ -73,5 +84,21 @@ public class Speaker implements Parcelable {
 
     public void setFirst(int first) {
         this.first = first;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public String getBio() {
+        return bio;
+    }
+
+    public void setBio(String bio) {
+        this.bio = bio;
     }
 }

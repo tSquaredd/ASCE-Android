@@ -61,6 +61,7 @@ public class SpeakerAdapter extends RecyclerView.Adapter<SpeakerAdapter.MyViewHo
         if (holder.view_type == TYPE_LIST) {
             holder.selfie.setImageResource(data.get(position).getSelfie());
             holder.name.setText(data.get(position).getName());
+            holder.position.setText(data.get(position).getPosition());
         } else if (holder.view_type == TYPE_HEAD) {
                 holder.header.setText(data.get(position).getName().charAt(0)+"");
         }
@@ -91,6 +92,8 @@ public class SpeakerAdapter extends RecyclerView.Adapter<SpeakerAdapter.MyViewHo
 
         ImageView selfie;
         TextView name;
+        TextView position;
+        TextView bio;
 
         TextView header;
 
@@ -100,6 +103,8 @@ public class SpeakerAdapter extends RecyclerView.Adapter<SpeakerAdapter.MyViewHo
                 itemView.setOnClickListener(this);
                 selfie = itemView.findViewById(R.id.selfie);
                 name = itemView.findViewById(R.id.professor_name);
+                position = itemView.findViewById(R.id.position);
+                bio = itemView.findViewById(R.id.speakers_text);
                 view_type = 1;
             }
             if (viewType == TYPE_HEAD) {
