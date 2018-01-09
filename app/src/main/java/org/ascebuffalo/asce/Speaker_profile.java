@@ -1,9 +1,13 @@
 package org.ascebuffalo.asce;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
@@ -11,9 +15,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
+import Adapters.ScheduleEventAdapter;
+import Objects.ScheduleEvent;
 import Objects.Speaker;
 
-public class Speaker_profile extends AppCompatActivity {
+public class Speaker_profile extends AppCompatActivity implements ScheduleEventAdapter.ScheduleEventOnClickHandler {
+
+    RecyclerView mRecyclerView;
+    ScheduleEventAdapter mAdapter;
+
 
 
     @Override
@@ -49,6 +62,42 @@ public class Speaker_profile extends AppCompatActivity {
             getSupportActionBar().setHomeButtonEnabled(true);
         }
 
+        String speaker_name = speaker.getName();
+
+        mRecyclerView = findViewById(R.id.speakers_detail_recyclerview);
+        ArrayList<ScheduleEvent> mEventList_Saturday = ScheduleEvent.saturdayEventSchedule();
+        ArrayList<ScheduleEvent> mEventList_Friday = ScheduleEvent.fridayScheduleData();
+        ArrayList<ScheduleEvent> speaker_schedule = new ArrayList<>();
+
+        for(ScheduleEvent i: mEventList_Friday) {
+            if(i.getPresenters()!=null && Arrays.asList(i.getPresenters()).contains(speaker_name)){
+                speaker_schedule.add(i);
+            }
+            else if (i.getLeaders()!=null && Arrays.asList(i.getLeaders()).contains(speaker_name)){
+                speaker_schedule.add(i);
+            }
+            else if (i.getModerators()!=null && Arrays.asList(i.getModerators()).contains(speaker_name)){
+                speaker_schedule.add(i);
+            }
+        }
+        for(ScheduleEvent i: mEventList_Saturday) {
+            if(i.getPresenters()!=null && Arrays.asList(i.getPresenters()).contains(speaker_name)){
+                speaker_schedule.add(i);
+            }
+            else if (i.getLeaders()!=null && Arrays.asList(i.getLeaders()).contains(speaker_name)){
+                speaker_schedule.add(i);
+            }
+            else if (i.getModerators()!=null && Arrays.asList(i.getModerators()).contains(speaker_name)){
+                speaker_schedule.add(i);
+            }
+        }
+        LinearLayoutManager manager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(manager);
+        mRecyclerView.setHasFixedSize(false);
+
+        mAdapter = new ScheduleEventAdapter(speaker_schedule,this);
+        mRecyclerView.setAdapter(mAdapter);
+
     }
 
     @Override
@@ -59,5 +108,14 @@ public class Speaker_profile extends AppCompatActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(ScheduleEvent event) {
+        Class destinationClass = EventDetailsActivity.class;
+        Intent intent = new Intent(this, destinationClass);
+        intent.putExtra("event", event);
+        startActivity(intent);
+
     }
 }

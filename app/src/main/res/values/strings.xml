@@ -20,12 +20,8 @@
         <item>  2nd Floor </item>
     </string-array>
 
-    <string name="Bethany_Mazur">
-        J.D., Director of Alumni and Constituent Engagement -University at Buffalo
-    </string>
-
+    <string name="Bethany_Mazur">J.D., Director of Alumni and Constituent Engagement -University at Buffalo</string>
     <string name="Chuck_Black"> P.E., M.ASCE Region 4 Director </string>
-
     <string name="Charlie_Mumford"> Civil Engineer 1, AECOM </string>
     <string name="Don_Wittmer"> P.E., M.ASCE, Chair, Leader Training Committee </string>
     <string name="Francis_Mahaney"> E.I.T., A.M.ASCE, Buffalo Section President-elect </string>

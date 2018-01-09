@@ -73,14 +73,6 @@ public class SpeakersFragment extends Fragment implements SearchView.OnQueryText
         SearchView searchView = (SearchView) myActionMenuItem.getActionView();
         searchView.setOnQueryTextListener(this);
 
-//        SearchManager searchManager =
-//                (SearchManager) getActivity().getSystemService(Context.SEARCH_SERVICE);
-//        SearchView searchView =
-//                (SearchView) menu.findItem(R.id.search).getActionView();
-//        searchView.setSearchableInfo(
-//                searchManager.getSearchableInfo(getActivity().getComponentName()));
-//        searchView.setIconifiedByDefault(false);
-//        searchView.setOnQueryTextListener(this);
     }
 
 
