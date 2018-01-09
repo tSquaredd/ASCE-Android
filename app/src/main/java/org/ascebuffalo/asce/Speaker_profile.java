@@ -22,12 +22,14 @@ public class Speaker_profile extends AppCompatActivity {
         setContentView(R.layout.speaker_detail);
         Toolbar toolbar = findViewById(R.id.main_toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         CollapsingToolbarLayout collapsingToolbarLayout =  findViewById(R.id.toolbar_layout);
-        collapsingToolbarLayout.setTitleEnabled(true);
+        collapsingToolbarLayout.setTitleEnabled(false);
+
 
         ImageView imageView = findViewById(R.id.main_backdrop);
-        TextView textView = findViewById(R.id.speakers_text);
+        TextView textView = findViewById(R.id.speakers_name);
         Bundle bundle = getIntent().getExtras();
 
         Speaker speaker = bundle.getParcelable("speaker");
@@ -35,7 +37,7 @@ public class Speaker_profile extends AppCompatActivity {
             Log.d("speaker init", speaker.getName() + " with selfie " + speaker.getSelfie());
 
             imageView.setImageResource(speaker.getSelfie());
-            collapsingToolbarLayout.setTitle(speaker.getName());
+            textView.setText(speaker.getName());
 //            textView.setText(speaker.getBio());
         }
 

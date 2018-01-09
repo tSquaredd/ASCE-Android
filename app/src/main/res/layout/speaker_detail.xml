@@ -21,9 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fitsSystemWindows="true"
-            app:title="Test"
-            app:expandedTitleTextAppearance="@style/TextAppearance.AppCompat.Headline"
-            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+            app:layout_scrollFlags="scroll|snap|enterAlways"
             app:contentScrim="?attr/colorPrimary"
             app:toolbarId="@+id/toolbar"
             >
@@ -60,24 +58,92 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/speakers_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="bio"
-                android:textAppearance="?android:textAppearanceMedium"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="#111"/>
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="meeting"
-                android:textAppearance="?android:textAppearanceMedium" />
+                android:orientation="vertical">
 
+                <TextView
+                    android:id="@+id/speakers_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:fontFamily="serif"
+                    android:paddingTop="16dp"
+                    android:text="name"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:id="@+id/speakers_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="serif"
+                    android:text="bio"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textSize="20sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="12dp"
+                    android:orientation="horizontal">
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:layout_marginRight="4dp"
+                        android:background="@drawable/bg_shadow"
+                        >
+
+                        <ImageButton
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/btn_twitter_normal"
+                            android:textColor="@android:color/holo_blue_dark" />
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:layout_marginRight="4dp"
+                        android:background="@drawable/bg_shadow"
+                        >
+                        <ImageButton
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/btn_website_normal"
+                            />
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="16dp"
+                android:background="#EEEEEE" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/speakers_detail_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
         </LinearLayout>
+
 
 
     </android.support.v4.widget.NestedScrollView>
