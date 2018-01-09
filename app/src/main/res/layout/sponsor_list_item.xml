@@ -10,9 +10,6 @@
 
     go back and forth between design and text views for schedule_list_item.xml and you can see how
     i put in some fake text with tools:text and it makes it easy to plan the design-->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+  
 
 </LinearLayout>
