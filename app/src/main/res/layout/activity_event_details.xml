@@ -40,6 +40,7 @@
             android:paddingTop="16dp"
             android:textAppearance="?android:textAppearanceMedium"
             android:text="@string/description"
+            android:textStyle="bold"
             android:visibility="gone"/>
 
         <TextView
@@ -48,6 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_event_details_header"
             android:visibility="gone"
+            android:paddingBottom="4dp"
             tools:text="Etsy twee authentic hashtag tofu, hot chicken kale chips artisan snackwave gentrify pabst cray farm-to-table. VHS la croix cliche mlkshk thundercats. Pitchfork PBR B mlkshk, helvetica hexagon hell of paleo edison bulb photo booth slow-carb. Thundercats tacos retro fanny pack snackwave pork belly typewriter street art. Blue bottle you probably haven't heard of them thundercats offal." />
 
 

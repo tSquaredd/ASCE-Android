@@ -1,9 +1,15 @@
 package org.ascebuffalo.asce;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import android.text.style.StyleSpan;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -52,6 +58,8 @@ public class EventDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_details);
 
+        this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         ButterKnife.bind(this);
         Intent incomingIntent = getIntent();
@@ -66,12 +74,37 @@ public class EventDetailsActivity extends AppCompatActivity {
         setViews();
     }
 
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+        if(id == android.R.id.home){
+            onBackPressed();
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
     private void setViews(){
+
+        // for adding bold styling to String
+        SpannableStringBuilder ssb;
+        StyleSpan bold = new StyleSpan(Typeface.BOLD);
+
+
         mEventNameTextView.setText(mEvent.getTitle());
         String temp = "Where: " + mEvent.getLocation();
-        mEventLocationTextView.setText(temp);
+        ssb = new SpannableStringBuilder(temp);
+        ssb.setSpan(bold, 0, 5, Spanned.SPAN_INCLUSIVE_INCLUSIVE);
+        mEventLocationTextView.setText(ssb);
+
+
         temp = "When: " + mEvent.getTimeInterval();
-        mEventTimeTextView.setText(temp);
+        ssb = new SpannableStringBuilder(temp);
+        ssb.setSpan(bold, 0, 4, Spanned.SPAN_INCLUSIVE_INCLUSIVE);
+        mEventTimeTextView.setText(ssb);
+
         if(mEvent.getDescription() != null) {
             mEventDescTextView.setText(mEvent.getDescription());
             mEventDescTextView.setVisibility(View.VISIBLE);
@@ -85,7 +118,10 @@ public class EventDetailsActivity extends AppCompatActivity {
                 sb.append(mEvent.getModerators()[i]).append("\n");
             }
 
-            mEventModeratorsTextView.setText(sb.toString());
+            ssb = new SpannableStringBuilder(sb.toString());
+            ssb.setSpan(bold, 0, 10, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+
+            mEventModeratorsTextView.setText(ssb);
             mEventModeratorsTextView.setVisibility(View.VISIBLE);
         }
 
@@ -96,7 +132,12 @@ public class EventDetailsActivity extends AppCompatActivity {
                 sb.append(mEvent.getPanelists()[i]).append("\n");
             }
 
-            mEventPanelistsTextView.setText(sb.toString());
+            ssb = new SpannableStringBuilder(sb.toString());
+            ssb.setSpan(bold, 0, 9, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+
+
+
+            mEventPanelistsTextView.setText(ssb);
             mEventPanelistsTextView.setVisibility(View.VISIBLE);
         }
 
@@ -107,7 +148,11 @@ public class EventDetailsActivity extends AppCompatActivity {
                 sb.append(mEvent.getPresenters()[i]).append("\n");
             }
 
-            mEventPresentersTextView.setText(sb.toString());
+            ssb = new SpannableStringBuilder(sb.toString());
+            ssb.setSpan(bold, 0, 10, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+
+
+            mEventPresentersTextView.setText(ssb);
             mEventPresentersTextView.setVisibility(View.VISIBLE);
         }
 
@@ -118,7 +163,10 @@ public class EventDetailsActivity extends AppCompatActivity {
                 sb.append(mEvent.getLeaders()[i]).append("\n");
             }
 
-            mEventLeadersTextView.setText(sb.toString());
+            ssb = new SpannableStringBuilder(sb.toString());
+            ssb.setSpan(bold, 0, 7, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
+
+            mEventLeadersTextView.setText(ssb);
             mEventLeadersTextView.setVisibility(View.VISIBLE);
         }
     }
