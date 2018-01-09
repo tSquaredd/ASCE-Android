@@ -29,6 +29,9 @@ public class EventDetailsActivity extends AppCompatActivity {
     @BindView(R.id.tv_event_details_name)
     TextView mEventNameTextView;
 
+    @BindView(R.id.tv_event_details_sections)
+    TextView mEventSectionsTextView;
+
     @BindView(R.id.tv_event_details_location)
     TextView mEventLocationTextView;
 
@@ -99,6 +102,7 @@ public class EventDetailsActivity extends AppCompatActivity {
         ssb.setSpan(bold, 0, 5, Spanned.SPAN_INCLUSIVE_INCLUSIVE);
         mEventLocationTextView.setText(ssb);
 
+        mEventSectionsTextView.setText(mEvent.getSections());
 
         temp = "When: " + mEvent.getTimeInterval();
         ssb = new SpannableStringBuilder(temp);

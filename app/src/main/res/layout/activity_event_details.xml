@@ -17,10 +17,18 @@
             tools:text="Welcome" />
 
         <TextView
+            android:id="@+id/tv_event_details_sections"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_event_details_name"
+            android:textAppearance="?android:textAppearanceMedium"
+            tools:text="WSBL / ESYMC" />
+
+        <TextView
             android:id="@+id/tv_event_details_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_event_details_name"
+            android:layout_below="@+id/tv_event_details_sections"
             android:textAppearance="?android:textAppearanceMedium"
             tools:text="Where: Ballroom" />
 
@@ -38,18 +46,18 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_event_details_time"
             android:paddingTop="16dp"
-            android:textAppearance="?android:textAppearanceMedium"
             android:text="@string/description"
+            android:textAppearance="?android:textAppearanceMedium"
             android:textStyle="bold"
-            android:visibility="gone"/>
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/tv_event_details_information"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_event_details_header"
-            android:visibility="gone"
             android:paddingBottom="4dp"
+            android:visibility="gone"
             tools:text="Etsy twee authentic hashtag tofu, hot chicken kale chips artisan snackwave gentrify pabst cray farm-to-table. VHS la croix cliche mlkshk thundercats. Pitchfork PBR B mlkshk, helvetica hexagon hell of paleo edison bulb photo booth slow-carb. Thundercats tacos retro fanny pack snackwave pork belly typewriter street art. Blue bottle you probably haven't heard of them thundercats offal." />
 
 
@@ -58,32 +66,32 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_event_details_information"
-            tools:text="Moderators:\nBob Bobertson\nRick Derp"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            tools:text="Moderators:\nBob Bobertson\nRick Derp" />
 
         <TextView
             android:id="@+id/tv_event_details_panelists"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_event_details_moderators"
-            tools:text="Speakers:\nBob Bobertson\nRick Derp"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            tools:text="Speakers:\nBob Bobertson\nRick Derp" />
 
         <TextView
             android:id="@+id/tv_event_details_presenters"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_event_details_panelists"
-            tools:text="Presenters:\nBob Bobertson\nRick Derp"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            tools:text="Presenters:\nBob Bobertson\nRick Derp" />
 
         <TextView
             android:id="@+id/tv_event_details_leaders"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_event_details_presenters"
-            tools:text="Leaders:\nBob Bobertson\nRick Derp"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            tools:text="Leaders:\nBob Bobertson\nRick Derp" />
 
     </RelativeLayout>
 </ScrollView>
