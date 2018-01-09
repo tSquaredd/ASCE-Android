@@ -19,7 +19,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".Speaker_profile"
@@ -28,12 +27,11 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="org.ascebuffalo.asce.MainActivity" />
-
         </activity>
-        <activity android:name=".SearchableActivity">
-
-        </activity>
-        <activity android:name=".EventDetailsActivity"></activity>
+        <activity android:name=".SearchableActivity" />
+        <activity android:name=".EventDetailsActivity" />
+        <activity android:name=".EatAndDrinkActivity" />
+        <activity android:name=".SeeAndDoActivity"></activity>
     </application>
 
 </manifest>
