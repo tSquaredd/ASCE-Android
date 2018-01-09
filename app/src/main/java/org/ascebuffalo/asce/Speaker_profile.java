@@ -55,7 +55,6 @@ public class Speaker_profile extends AppCompatActivity implements ScheduleEventA
         }
 
 
-
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
