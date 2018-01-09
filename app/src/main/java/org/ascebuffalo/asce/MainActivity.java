@@ -1,5 +1,9 @@
 package org.ascebuffalo.asce;
 
+import android.animation.ObjectAnimator;
+import android.animation.StateListAnimator;
+import android.app.SearchManager;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -15,28 +19,30 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.SearchView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-
+    private MenuItem itemToHide;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar =  findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer =  findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView =  findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
 
@@ -65,6 +71,9 @@ public class MainActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
+        itemToHide = menu.findItem(R.id.action_search);
+        itemToHide.setVisible(false);
+
         return true;
     }
 
@@ -97,6 +106,7 @@ public class MainActivity extends AppCompatActivity
             // Handle the camera action
             fragment = new HomeFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            setTitle("Home");
 
             transaction.replace(R.id.content_frame, fragment);
             transaction.addToBackStack(null);
@@ -106,6 +116,7 @@ public class MainActivity extends AppCompatActivity
 
             fragment = new ScheduleFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            setTitle("Schedule");
 
             transaction.replace(R.id.content_frame, fragment);
             transaction.addToBackStack(null);
@@ -115,6 +126,7 @@ public class MainActivity extends AppCompatActivity
 
             fragment = new SpeakersFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            setTitle("Speakers");
 
             transaction.replace(R.id.content_frame, fragment);
             transaction.addToBackStack(null);
@@ -124,6 +136,7 @@ public class MainActivity extends AppCompatActivity
 
             fragment = new SponsorsFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            setTitle("Sponsors");
 
             transaction.replace(R.id.content_frame, fragment);
             transaction.addToBackStack(null);
@@ -134,6 +147,7 @@ public class MainActivity extends AppCompatActivity
 
             fragment = new ProgramFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            setTitle("Program");
 
             transaction.replace(R.id.content_frame, fragment);
             transaction.addToBackStack(null);
@@ -143,6 +157,7 @@ public class MainActivity extends AppCompatActivity
 
             fragment = new EventMapFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            setTitle("Event Map");
 
             transaction.replace(R.id.content_frame, fragment);
             transaction.addToBackStack(null);
@@ -152,6 +167,7 @@ public class MainActivity extends AppCompatActivity
 
             fragment = new EntertainmentFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            setTitle("Entertainment");
 
             transaction.replace(R.id.content_frame, fragment);
             transaction.addToBackStack(null);
@@ -176,7 +192,7 @@ public class MainActivity extends AppCompatActivity
 
             fragment = new TwitterFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-
+            setTitle("twitter");
             transaction.replace(R.id.content_frame, fragment);
             transaction.addToBackStack(null);
             transaction.commit();

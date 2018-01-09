@@ -1,13 +1,47 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="org.ascebuffalo.asce.EventMapFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/Widget.AppCompat.ActionBar"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="1dp">
+
+        </android.support.v7.widget.Toolbar>
+
+        <Spinner
+            android:id="@+id/spinner2"
+            android:layout_width="178dp"
+            android:layout_height="29dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="100dp"
+            android:theme="@style/ThemeOverlay.AppCompat.Light"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="16dp" />
+    </FrameLayout>
+
+
+    <ImageView
+        android:id="@+id/floor_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello Event Map Fragment" />
+        android:adjustViewBounds="true"
+        android:src="@drawable/event_map_first_floor" />
 
-</FrameLayout>
+
+</LinearLayout>

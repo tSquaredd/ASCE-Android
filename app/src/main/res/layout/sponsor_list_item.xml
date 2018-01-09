@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <!-- TODO(1): decide what you wnat for the layout of each sponsor. You can reference schedule_list_item.xml
+    and see how I did it for schedule
+
+    go back and forth between design and text views for schedule_list_item.xml and you can see how
+    i put in some fake text with tools:text and it makes it easy to plan the design-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/hello_blank_fragment" />
+
+</LinearLayout>
