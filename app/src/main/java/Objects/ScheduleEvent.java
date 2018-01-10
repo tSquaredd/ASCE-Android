@@ -193,11 +193,13 @@ public class ScheduleEvent implements Parcelable{
         moderatorList[0] = "Don Wittmer";
 
         presenterList = new String[5];
-        presenterList[0] = "Tony Cioffi";
-        presenterList[1] = "Jason Havens";
+        presenterList[0] = "Jason Havens";
+        presenterList[1] = "Kristina Swallow";
         presenterList[2] = "Michael J. Finn";
-        presenterList[3] = "Kristina Swallow";
-        presenterList[4] = "Tom Smith";
+        presenterList[3] = "Tom Smith";
+        presenterList[4] = "Tony Cioffi";
+
+
 
 
         event = new ScheduleEvent("Welcome",
@@ -217,8 +219,9 @@ public class ScheduleEvent implements Parcelable{
         moderatorList[1] = "Shawn Kelley";
 
         presenterList = new String[2];
-        presenterList[0] = "Nancy Berson";
-        presenterList[1] = "Jennifer Lawrence";
+        presenterList[0] = "Jennifer Lawrence";
+        presenterList[1] = "Nancy Berson";
+
 
         event = new ScheduleEvent("ASCE Live",
                 "8:15", "9:15",
@@ -261,12 +264,12 @@ public class ScheduleEvent implements Parcelable{
                 null);
 
         list.add(event);
-
+        // TODO: Not all leaders appearing
         leaderList = new String[4];
-        leaderList[0] = "Tony Cioffi (ROOM**)";
-        leaderList[1] = "John Casana (ROOM**)";
-        leaderList[2] = "Chuck Black (ROOM**)";
-        leaderList[3] = "Peter Moore (ROOM**)";
+        leaderList[0] = "Chuck Black";
+        leaderList[1] = "John Casana";
+        leaderList[2] = "Peter Moore";
+        leaderList[3] = "Tony Cioffi";
 
         event = new ScheduleEvent("Region Breakout Session",
                 "10:30", "12:00",
@@ -279,7 +282,7 @@ public class ScheduleEvent implements Parcelable{
                 "Join others from your region and learn new names and faces; " +
                         "acquire new skills with a fun filled icebreaker.\n" +
                         "Region leaders meet with their respective section / branch leaders, Younger member leaders " +
-                        "and Student chapter leaders."
+                        "and Student chapter leaders.\n\nChuck Black: (ROOM**)\nJohn Casana: (ROOM**)\nPeter Moore: (ROOM**)\nTony Cioffi: (ROOM**)"
         );
 
         list.add(event);
@@ -388,6 +391,8 @@ public class ScheduleEvent implements Parcelable{
                 null,
                 "WSBL / ERYMC",
                 null);
+
+        list.add(event);
 
         moderatorList = new String[1];
         moderatorList[0] = "Francis Mahaney";
@@ -501,6 +506,8 @@ public class ScheduleEvent implements Parcelable{
                 "WSBL / ERYMC / WSCL",
                 null);
 
+        list.add(event);
+
         presenterList = new String[1];
         presenterList[0] = "Melissa Burns";
 
@@ -548,12 +555,15 @@ public class ScheduleEvent implements Parcelable{
         list.add(event);
 
         moderatorList = new String[2];
-        moderatorList[0] = "Jason Havens";
-        moderatorList[1] = "Francis Mahaney";
+        moderatorList[0] = "Francis Mahaney";
+        moderatorList[1] = "Jason Havens";
 
-        presenterList = new String[2];
-        presenterList[0] = "Kelly Dooley";
+
+        presenterList = new String[3];
+        presenterList[0] = "Bethany Mazur";
         presenterList[1] = "Jason Lang";
+        presenterList[2] = "Kelly Dooley";
+
 
         event = new ScheduleEvent("Should we Raise the Bar?",
                 "1:30", "2:30",

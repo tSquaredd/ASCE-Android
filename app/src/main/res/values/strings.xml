@@ -46,8 +46,6 @@
 
 
     <string name="Bio">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-		In mollis est vitae erat laoreet consectetur. Mauris dui mauris,
-		dictum vel egestas vel, porta sed ante. Phasellus congue viverra ipsum,
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mollis est vitae erat laoreet consectetur. Mauris dui mauris, dictum vel egestas vel, porta sed ante. Phasellus congue viverra ipsum,
     </string>
 </resources>
