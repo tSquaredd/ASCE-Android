@@ -162,7 +162,7 @@ public class MainActivity extends AppCompatActivity
 
             fragment = new EventMapFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            setTitle("Event Map");
+            setTitle("Maps");
 
             transaction.replace(R.id.content_frame, fragment);
             transaction.addToBackStack(null);
@@ -188,7 +188,7 @@ public class MainActivity extends AppCompatActivity
 
             fragment = new TwitterFragment();
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            setTitle("twitter");
+            setTitle("Twitter");
             transaction.replace(R.id.content_frame, fragment);
             transaction.addToBackStack(null);
             transaction.commit();

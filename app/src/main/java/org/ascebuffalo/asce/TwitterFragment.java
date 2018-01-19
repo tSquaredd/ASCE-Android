@@ -49,7 +49,11 @@ public class TwitterFragment extends Fragment {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         final SearchTimeline searchTimeline = new SearchTimeline.Builder()
-                .query("#android")
+                .query("#MRLC")
+                .query("MRLC2018")
+                .query("ERYMC")
+                .query("ERYMC2018")
+                .query("ASCE")
                 .maxItemsPerRequest(100)
                 .build();
 
