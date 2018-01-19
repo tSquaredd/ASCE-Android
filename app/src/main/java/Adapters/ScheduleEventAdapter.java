@@ -66,7 +66,8 @@ public class ScheduleEventAdapter extends RecyclerView.Adapter<ScheduleEventAdap
     public class EventViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         TextView titleTextView;
-        TextView timeTextView;
+        TextView startTimeTextView;
+        TextView endTimeTextView;
         TextView locationTextView;
         TextView sectionsTextView;
 
@@ -74,7 +75,8 @@ public class ScheduleEventAdapter extends RecyclerView.Adapter<ScheduleEventAdap
             super(itemView);
 
             titleTextView = (TextView)itemView.findViewById(R.id.tv_event_name);
-            timeTextView = (TextView)itemView.findViewById(R.id.tv_event_time);
+            startTimeTextView = (TextView)itemView.findViewById(R.id.tv_event_time);
+            endTimeTextView = (TextView)itemView.findViewById(R.id.tv_event_time2);
             locationTextView = (TextView)itemView.findViewById(R.id.tv_event_location);
             sectionsTextView = (TextView)itemView.findViewById(R.id.tv_event_sections);
 
@@ -83,8 +85,8 @@ public class ScheduleEventAdapter extends RecyclerView.Adapter<ScheduleEventAdap
 
         void bind(ScheduleEvent event){
             titleTextView.setText(event.getTitle());
-            String timeInterval = event.getStartTime() + " - " +event.getEndTime();
-            timeTextView.setText(timeInterval);
+            startTimeTextView.setText(event.getStartTime());
+            endTimeTextView.setText(event.getEndTime());
             if(event.getLocation() != null){
                 locationTextView.setText(event.getLocation());
                 locationTextView.setVisibility(View.VISIBLE);
