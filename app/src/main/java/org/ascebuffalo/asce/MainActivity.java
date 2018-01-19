@@ -4,6 +4,8 @@ import android.animation.ObjectAnimator;
 import android.animation.StateListAnimator;
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -176,21 +178,12 @@ public class MainActivity extends AppCompatActivity
             transaction.addToBackStack(null);
             transaction.commit();
 
-        }else if (id == R.id.nav_facebook) {
+        }else if (id == R.id.nav_groupme) {
 
-            /* TODO: Thinkin instead of fragment just go to facebook on users prefered web browser
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse("https://groupme.com/join_group/33044875/JACRv8"));
+            startActivity(intent);
 
-                The other option is to use a webview and have the facebook load within our app
-                however, I have done this before and it usually looks and functions better
-                if you just have it go to web browser...
-
-                OR we could see if we can also have it open right to the facebook app..
-                could create an issue if user doesnt have facebook app installed..
-
-                We will have to look into this further
-
-                -- TYLER
-            */
         } else if(id == R.id.nav_twitter){
 
             fragment = new TwitterFragment();

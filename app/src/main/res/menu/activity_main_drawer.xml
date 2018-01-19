@@ -39,9 +39,9 @@
     <item android:title="Social Media">
         <menu>
             <item
-                android:id="@+id/nav_facebook"
-                android:icon="@drawable/ic_action_facebook"
-                android:title="Facebook" />
+                android:id="@+id/nav_groupme"
+                android:icon="@drawable/ic_chat_black_24dp"
+                android:title="GroupMe" />
             <item
                 android:id="@+id/nav_twitter"
                 android:icon="@drawable/ic_action_twitter"
