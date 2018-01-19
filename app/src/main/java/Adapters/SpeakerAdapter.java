@@ -31,11 +31,16 @@ public class SpeakerAdapter extends RecyclerView.Adapter<SpeakerAdapter.MyViewHo
     private List<Speaker> data = Collections.emptyList();
     private static final int TYPE_HEAD = 0;
     private static final int TYPE_LIST = 1;
+    private int layoutItemId;
 
 
-    public SpeakerAdapter(Context context, List<Speaker> data) {
+    public SpeakerAdapter(Context context, List<Speaker> data, boolean isForEventDetails) {
         inflater = LayoutInflater.from(context);
         this.data = data;
+        if(isForEventDetails)
+            layoutItemId = R.layout.speaker_card_list_item_view;
+        else
+            layoutItemId = R.layout.speaker_list_item;
     }
 
     @Override
@@ -43,7 +48,7 @@ public class SpeakerAdapter extends RecyclerView.Adapter<SpeakerAdapter.MyViewHo
         View rootview;
         MyViewHolder myViewHolder;
         if (viewType == TYPE_LIST) {
-            rootview = inflater.inflate(R.layout.speaker_list_item, parent, false);
+            rootview = inflater.inflate(layoutItemId, parent, false);
             myViewHolder = new MyViewHolder(rootview, viewType);
             return myViewHolder;
         } else if (viewType == TYPE_HEAD) {

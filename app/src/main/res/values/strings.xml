@@ -48,4 +48,14 @@
     <string name="Bio">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mollis est vitae erat laoreet consectetur. Mauris dui mauris, dictum vel egestas vel, porta sed ante. Phasellus congue viverra ipsum,
     </string>
+
+
+    <!-- activity_event_details.xml -->
+    <string name="presenters">Presenters:</string>
+    <string name="moderators">Moderators:</string>
+    <string name="leaders">Leaders:</string>
+    <string name="panelists">Panelists:</string>
+
+    <!-- Conference Names -->
+    <string name="conference_name">MRLC 2018</string>
 </resources>

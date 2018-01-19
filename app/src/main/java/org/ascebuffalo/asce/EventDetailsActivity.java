@@ -138,17 +138,7 @@ public class EventDetailsActivity extends AppCompatActivity {
         }
 
         if(mEvent.getModerators() != null){
-//            StringBuilder sb = new StringBuilder();
-//            sb.append("Moderators:\n");
-//            for(int i = 0; i < mEvent.getModerators().length; i++){
-//                sb.append(mEvent.getModerators()[i]).append("\n");
-//            }
-//
-//            ssb = new SpannableStringBuilder(sb.toString());
-//            ssb.setSpan(bold, 0, 10, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
 
-//            mEventModeratorsTextView.setText(ssb);
-//            mEventModeratorsTextView.setVisibility(View.VISIBLE);
 
             // Reveal header
             mEventModeratorsHeaderTextView.setVisibility(View.VISIBLE);
@@ -165,7 +155,7 @@ public class EventDetailsActivity extends AppCompatActivity {
                 }
             }
 
-            SpeakerAdapter adapter = new SpeakerAdapter(this, moderatorList);
+            SpeakerAdapter adapter = new SpeakerAdapter(this, moderatorList, true);
             mModeratorsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
             mModeratorsRecyclerView.setAdapter(adapter);
 
@@ -174,19 +164,7 @@ public class EventDetailsActivity extends AppCompatActivity {
         }
 
         if(mEvent.getPanelists() != null){
-//            StringBuilder sb = new StringBuilder();
-//            sb.append("Panelists:\n");
-//            for(int i = 0; i < mEvent.getPanelists().length; i++){
-//                sb.append(mEvent.getPanelists()[i]).append("\n");
-//            }
-//
-//            ssb = new SpannableStringBuilder(sb.toString());
-//            ssb.setSpan(bold, 0, 9, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
 
-
-
-//            mEventPanelistsTextView.setText(ssb);
-//            mEventPanelistsTextView.setVisibility(View.VISIBLE);
 
             // Reveal header
             mEventPanelistsHeaderTextView.setVisibility(View.VISIBLE);
@@ -201,7 +179,7 @@ public class EventDetailsActivity extends AppCompatActivity {
                 }
             }
 
-            SpeakerAdapter adapter = new SpeakerAdapter(this, panelistList);
+            SpeakerAdapter adapter = new SpeakerAdapter(this, panelistList, true);
             mPanelistsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
             mPanelistsRecyclerView.setAdapter(adapter);
 
@@ -209,18 +187,7 @@ public class EventDetailsActivity extends AppCompatActivity {
         }
 
         if(mEvent.getPresenters() != null){
-//            StringBuilder sb = new StringBuilder();
-//            sb.append("Presenters:\n");
-//            for(int i = 0; i < mEvent.getPresenters().length; i++){
-//                sb.append(mEvent.getPresenters()[i]).append("\n");
-//            }
-//
-//            ssb = new SpannableStringBuilder(sb.toString());
-//            ssb.setSpan(bold, 0, 10, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
 
-//
-//            mEventPresentersTextView.setText(ssb);
-//            mEventPresentersTextView.setVisibility(View.VISIBLE);
 
             // Reveal header
             mEventPresentersHeaderTextView.setVisibility(View.VISIBLE);
@@ -235,24 +202,14 @@ public class EventDetailsActivity extends AppCompatActivity {
                 }
             }
 
-            SpeakerAdapter adapter = new SpeakerAdapter(this, presenterList);
+            SpeakerAdapter adapter = new SpeakerAdapter(this, presenterList, true);
             mPresentersRecyclerView.setLayoutManager(new LinearLayoutManager(this));
             mPresentersRecyclerView.setAdapter(adapter);
 
         }
 
         if(mEvent.getLeaders() != null){
-//            StringBuilder sb = new StringBuilder();
-//            sb.append("Leaders:\n");
-//            for(int i = 0; i < mEvent.getLeaders().length; i++){
-//                sb.append(mEvent.getLeaders()[i]).append("\n");
-//            }
-//
-//            ssb = new SpannableStringBuilder(sb.toString());
-//            ssb.setSpan(bold, 0, 7, Spannable.SPAN_INCLUSIVE_INCLUSIVE);
 
-//            mEventLeadersTextView.setText(ssb);
-//            mEventLeadersTextView.setVisibility(View.VISIBLE);
 
             // Reveal header
             mEventLeadersHeaderTextView.setVisibility(View.VISIBLE);
@@ -267,7 +224,7 @@ public class EventDetailsActivity extends AppCompatActivity {
                 }
             }
 
-            SpeakerAdapter adapter = new SpeakerAdapter(this, leadersList);
+            SpeakerAdapter adapter = new SpeakerAdapter(this, leadersList, true);
             mLeadersRecyclerView.setLayoutManager(new LinearLayoutManager(this));
             mLeadersRecyclerView.setAdapter(adapter);
 

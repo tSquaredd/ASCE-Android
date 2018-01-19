@@ -1,8 +1,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="60dp"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/custom_ripple_effect"
-    android:clickable="true">
+    android:clickable="true"
+    android:focusable="true">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/selfie"
@@ -18,9 +20,9 @@
         android:layout_height="60dp"
         android:orientation="vertical"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:layout_toRightOf="@id/selfie"
+        android:layout_toEndOf="@id/selfie"
         >
 
         <TextView
@@ -29,7 +31,7 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:gravity="bottom"
-            android:text="The name of the professor"
+            tools:text="The name of the professor"
             android:textSize="14sp"
             android:textAppearance="?android:textAppearanceMedium"
             android:textColor="#111" />
@@ -42,7 +44,7 @@
             android:ellipsize="end"
             android:maxLines="1"
             android:layout_marginEnd="16dp"
-            android:text="Towne LLC"
+            tools:text="Towne LLC"
             android:textSize="12sp"
             android:textAppearance="?android:textAppearanceSmall"
             android:textColor="#757575"/>

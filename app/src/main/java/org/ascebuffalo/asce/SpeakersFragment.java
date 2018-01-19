@@ -56,7 +56,7 @@ public class SpeakersFragment extends Fragment implements SearchView.OnQueryText
 
         RecyclerView recyclerView = root.findViewById(R.id.recyclerView_speaker);
         data = Speaker.getData();
-        adapter = new SpeakerAdapter(getActivity(),data);
+        adapter = new SpeakerAdapter(getActivity(),data, false);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         setHasOptionsMenu(true);
