@@ -1,60 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:layout_marginBottom="4dp">
 
-    <TextView
-        android:id="@+id/tv_event_name"
-        android:textAppearance="?android:textAppearanceMedium"
-        android:textColor="#111"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="Welcome To MRLC 2018"
-        android:paddingTop="16dp"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"/>
-
-    <TextView
-        android:id="@+id/tv_event_sections"
-        android:textAppearance="?android:textAppearanceSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="ABCD / EFGY/ DGAF"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:visibility="gone"/>
-
-    <TextView
-        android:id="@+id/tv_event_location"
-        android:textAppearance="?android:textAppearanceSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="Super Awesome Ballroom"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:visibility="gone"/>
-
-    <TextView
-        android:id="@+id/tv_event_time"
-        android:textAppearance="?android:textAppearanceSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="2:00 - 2:45"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:paddingBottom="4dp"/>
-
-
-
-    <View
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view_course_listing"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#666"
-       android:layout_marginTop="16dp"
-        android:paddingBottom="16dp" />
+        android:layout_height="match_parent"
+        android:layout_margin="4dp"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
 
+            <TextView
+                android:id="@+id/tv_event_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="16dp"
+                android:paddingStart="16dp"
+                android:paddingTop="16dp"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="#111"
+                tools:text="Welcome To MRLC 2018" />
+
+            <TextView
+                android:id="@+id/tv_event_sections"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="16dp"
+                android:paddingStart="16dp"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:visibility="gone"
+                tools:text="ABCD / EFGY/ DGAF" />
+
+            <TextView
+                android:id="@+id/tv_event_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="16dp"
+                android:paddingStart="16dp"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:visibility="gone"
+                tools:text="Super Awesome Ballroom" />
+
+            <TextView
+                android:id="@+id/tv_event_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="4dp"
+                android:paddingEnd="16dp"
+                android:paddingStart="16dp"
+                android:textAppearance="?android:textAppearanceSmall"
+                tools:text="2:00 - 2:45" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
 
 </LinearLayout>
