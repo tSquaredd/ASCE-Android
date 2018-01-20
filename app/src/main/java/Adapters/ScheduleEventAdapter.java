@@ -90,12 +90,14 @@ public class ScheduleEventAdapter extends RecyclerView.Adapter<ScheduleEventAdap
             if(event.getLocation() != null){
                 locationTextView.setText(event.getLocation());
                 locationTextView.setVisibility(View.VISIBLE);
+                itemView.findViewById(R.id.location_img).setVisibility(View.VISIBLE);
             }
 
 
             if(event.getSections() != null) {
                 sectionsTextView.setText(event.getSections());
                 sectionsTextView.setVisibility(View.VISIBLE);
+                itemView.findViewById(R.id.section_img).setVisibility(View.VISIBLE);
             }
         }
 

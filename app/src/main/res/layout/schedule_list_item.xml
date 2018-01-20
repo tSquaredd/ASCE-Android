@@ -13,10 +13,10 @@
         android:id="@+id/card_view_course_listing"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="4dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginTop="4dp"
         android:layout_marginBottom="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
         app:cardCornerRadius="4dp"
         app:cardElevation="2dp">
 
@@ -41,6 +41,17 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Welcome To MRLC 2018" />
 
+            <ImageView
+                android:id="@+id/section_img"
+                android:layout_width="18dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_event_name"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_event_black_24dp"
+                tools:visibility="visible"/>
+
             <TextView
                 android:id="@+id/tv_event_sections"
                 android:layout_width="wrap_content"
@@ -51,23 +62,34 @@
                 android:paddingStart="16dp"
                 android:textAppearance="?android:textAppearanceSmall"
                 android:visibility="gone"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@id/section_img"
                 app:layout_constraintTop_toBottomOf="@+id/tv_event_name"
                 tools:text="ABCD / EFGY/ DGAF"
                 tools:visibility="visible" />
+
+            <ImageView
+                android:id="@+id/location_img"
+                android:layout_width="18dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                app:layout_constraintHorizontal_bias="0.21"
+                app:layout_constraintStart_toStartOf="parent"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/tv_event_sections"
+                app:srcCompat="@drawable/ic_location_on_black_24dp"
+                tools:visibility="visible"/>
 
             <TextView
                 android:id="@+id/tv_event_location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="2dp"
                 android:paddingBottom="16dp"
                 android:paddingEnd="16dp"
                 android:paddingStart="16dp"
                 android:textAppearance="?android:textAppearanceSmall"
                 android:visibility="gone"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@id/location_img"
                 app:layout_constraintTop_toBottomOf="@+id/tv_event_sections"
                 tools:text="Super Awesome Ballroom"
                 tools:visibility="visible" />
@@ -101,6 +123,8 @@
                 app:layout_constraintTop_toBottomOf="@+id/tv_event_time"
                 tools:text="2:45"
                 tools:visibility="visible" />
+
+
         </android.support.constraint.ConstraintLayout>
     </android.support.v7.widget.CardView>
 

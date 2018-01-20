@@ -1,30 +1,25 @@
 package org.ascebuffalo.asce;
 
 
-import android.content.Context;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.view.ViewPager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import java.util.ArrayList;
+import java.util.List;
 
-//import Adapters.SponsorAdapter;
-import Objects.ScheduleEvent;
+import Adapters.SponsorAdapter;
 import Objects.Sponsor;
 /**
  * A simple {@link Fragment} subclass.
  */
 public class SponsorsFragment extends Fragment {
 
-    private ViewPager mViewPager;
-    private ArrayList<Sponsor> mEventList;
-    private TabLayout mTabLayout;
+    private List<Sponsor> data = new ArrayList<>();
+    private SponsorAdapter adapter;
 
     public SponsorsFragment() {
         // Required empty public constructor
@@ -35,74 +30,17 @@ public class SponsorsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        /*
-        TODO(3): Not sure why your using ViewPager here.
+        View root=inflater.inflate(R.layout.fragment_sponsors, container, false);
 
-        Below in getCount you are returning one. And getPageTitle just returns sponsor.
-        So its just making a one page view pager.
+        RecyclerView recyclerView = root.findViewById(R.id.recyclerView_sponsor);
+        data = Sponsor.getData();
+        adapter = new SponsorAdapter(getActivity(), data);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        setHasOptionsMenu(true);
 
-        I'd say just get rid of it and put a recyclerView in fragment_sponsor.xml
-
-         */
-        // Inflate the layout for this fragment
-        View result=inflater.inflate(R.layout.fragment_sponsors, container, false);
-        ViewPager pager=(ViewPager)result.findViewById(R.id.nav_pager);
-
-        pager.setAdapter(new SponsorAdapter(getActivity(),getChildFragmentManager()));
-
-        mTabLayout = (TabLayout)result.findViewById(R.id.nav_sponsors);
-        mTabLayout.setupWithViewPager(pager);
-        return result;
+        return root;
     }
-
-    public class SponsorAdapter extends FragmentStatePagerAdapter {
-
-        Context context = null;
-        public SponsorAdapter (Context context, FragmentManager fm){
-            super(fm);
-            this.context = context;
-        }
-
-        @Override
-        public Fragment getItem(int position) {
-
-            Fragment fragment;
-            ArrayList<Sponsor> eventList;
-            Bundle args = new Bundle();
-            fragment = new SponsorsFragment();
-            eventList=testdata();
-            args.putParcelableArrayList("Sponsor", eventList);
-            fragment.setArguments(args);
-            return fragment;
-        }
-
-        @Override
-        public int getCount() {
-            return 1;
-        }
-        /////////////new change
-//change again/////
-        @Override
-        public CharSequence getPageTitle(int position) {
-            return "Sponsors";
-        }
-    }
-    public ArrayList<Sponsor> testdata(){
-
-        ArrayList<Sponsor> list = new ArrayList<>();
-        Sponsor fakeEvent=new Sponsor("sponsor1", "1000","picture link");
-        list.add(fakeEvent);
-        fakeEvent=new Sponsor("sponsor12", "1100","picture link 2");
-        list.add(fakeEvent);
-        fakeEvent=new Sponsor("sponsor13", "1200","picture link 3");
-        list.add(fakeEvent);
-        fakeEvent=new Sponsor("sponsor14", "1300","picture link 4");
-        list.add(fakeEvent);
-
-        return list;
-
-    }
-
 
 
 }

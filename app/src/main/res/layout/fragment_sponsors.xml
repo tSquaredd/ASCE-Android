@@ -6,8 +6,12 @@
 
     <!-- TODO(2): Also have to update this. Dont know if you should go off of fragment_schedule.xml
      see the TODO in SponsorsFragment-->
-    <TextView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView_sponsor"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:scrollbars="vertical"
+        android:scrollbarThumbVertical="@android:color/darker_gray"
+        android:scrollbarSize="5dp"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>

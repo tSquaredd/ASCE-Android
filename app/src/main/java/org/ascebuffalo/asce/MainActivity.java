@@ -1,19 +1,13 @@
 package org.ascebuffalo.asce;
 
-import android.animation.ObjectAnimator;
-import android.animation.StateListAnimator;
-import android.app.SearchManager;
-import android.content.Context;
+
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
-import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -21,19 +15,15 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.SearchView;
-import android.widget.Toast;
 
-import com.squareup.picasso.Picasso;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private MenuItem itemToHide;
+    private Fragment current_fragment;
+    DrawerLayout drawer;
+
 
 
     @Override
@@ -42,8 +32,8 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar =  findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        DrawerLayout drawer =  findViewById(R.id.drawer_layout);
+        current_fragment = new HomeFragment();
+        drawer =  findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -51,6 +41,30 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView =  findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+        drawer.addDrawerListener(new DrawerLayout.DrawerListener() {
+            @Override
+            public void onDrawerSlide(View drawerView, float slideOffset) {}
+
+            @Override
+            public void onDrawerOpened(View drawerView) {}
+
+            @Override
+            public void onDrawerStateChanged(int newState) {}
+
+            @Override
+            public void onDrawerClosed(View drawerView) {
+                if (current_fragment != null) {
+                    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                    transaction.setCustomAnimations(R.anim.enter,R.anim.exit,R.anim.pop_enter,R.anim.pop_exit);
+                    transaction.replace(R.id.content_frame, current_fragment);
+                    transaction.addToBackStack(null);
+                    transaction.commit();
+                    current_fragment = null;
+                }
+            }
+        });
 
 
         // intitialize home fragmet
@@ -64,7 +78,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer =  findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
@@ -97,108 +111,56 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
+
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         //Switch Fragment based on users selection from the nav drawer
-        int id = item.getItemId();
-
-        Fragment fragment;
-
         // TODO: Could switch this to a switch statement for small increase in performance ?
 
-        if (id == R.id.nav_home) {
-            // Handle the camera action
-            fragment = new HomeFragment();
-            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            setTitle("Home");
-
-            transaction.replace(R.id.content_frame, fragment);
-            transaction.addToBackStack(null);
-            transaction.commit();
-
-        } else if (id == R.id.nav_schedule) {
-
-            fragment = new ScheduleFragment();
-            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            setTitle("Schedule");
-
-            transaction.replace(R.id.content_frame, fragment);
-            transaction.addToBackStack(null);
-            transaction.commit();
-
-        } else if (id == R.id.nav_speakers) {
-
-            fragment = new SpeakersFragment();
-            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            setTitle("Speakers");
-
-            transaction.replace(R.id.content_frame, fragment);
-            transaction.addToBackStack(null);
-            transaction.commit();
-
-        } else if (id == R.id.nav_sponsors) {
-
-            fragment = new SponsorsFragment();
-            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            setTitle("Sponsors");
-
-            transaction.replace(R.id.content_frame, fragment);
-            transaction.addToBackStack(null);
-            transaction.commit();
-
-
-        } else if (id == R.id.nav_program) {
-
-            fragment = new ProgramFragment();
-            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            setTitle("Program");
-
-            transaction.replace(R.id.content_frame, fragment);
-            transaction.addToBackStack(null);
-            transaction.commit();
-
-        } else if (id == R.id.nav_event_map){
-
-            fragment = new EventMapFragment();
-            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            setTitle("Maps");
-
-            transaction.replace(R.id.content_frame, fragment);
-            transaction.addToBackStack(null);
-            transaction.commit();
-
-        }else if (id == R.id.nav_entertainment){
-
-            fragment = new EntertainmentFragment();
-            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            setTitle("Entertainment");
-
-            transaction.replace(R.id.content_frame, fragment);
-            transaction.addToBackStack(null);
-            transaction.commit();
-
-        }else if (id == R.id.nav_groupme) {
-
-            Intent intent = new Intent(Intent.ACTION_VIEW);
-            intent.setData(Uri.parse("https://groupme.com/join_group/33044875/JACRv8"));
-            startActivity(intent);
-
-        } else if(id == R.id.nav_twitter){
-
-            fragment = new TwitterFragment();
-            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            setTitle("Twitter");
-            transaction.replace(R.id.content_frame, fragment);
-            transaction.addToBackStack(null);
-            transaction.commit();
-
+        switch(item.getItemId()){
+            case R.id.nav_home:
+                current_fragment = new HomeFragment();
+                setTitle("home");
+                break;
+            case R.id.nav_schedule:
+                current_fragment = new ScheduleFragment();
+                setTitle("Schedule");
+                break;
+            case R.id.nav_speakers:
+                current_fragment = new SpeakersFragment();
+                setTitle("Speakers");
+                break;
+            case R.id.nav_sponsors:
+                current_fragment = new SponsorsFragment();
+                setTitle("Sponsors");
+                break;
+            case R.id.nav_program:
+                current_fragment = new ProgramFragment();
+                setTitle("Program");
+                break;
+            case R.id.nav_event_map:
+                current_fragment = new EventMapFragment();
+                setTitle("Maps");
+                break;
+            case R.id.nav_entertainment:
+                current_fragment = new EntertainmentFragment();
+                setTitle("Entertainment");
+                break;
+            case R.id.nav_groupme:
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("https://groupme.com/join_group/33044875/JACRv8"));
+                startActivity(intent);
+                break;
+            case R.id.nav_twitter:
+                current_fragment = new TwitterFragment();
+                setTitle("Twitter");
+                break;
         }
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 
 
 

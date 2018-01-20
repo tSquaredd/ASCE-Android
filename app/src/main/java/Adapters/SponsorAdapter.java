@@ -5,82 +5,67 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.ascebuffalo.asce.R;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import Objects.ScheduleEvent;
+import Objects.Speaker;
 import Objects.Sponsor;
 
 
-public class SponsorAdapter extends RecyclerView.Adapter<SponsorAdapter.EventViewHolder> {
+public class SponsorAdapter extends RecyclerView.Adapter<SponsorAdapter.MyViewHolder> {
+    private LayoutInflater inflater;
+    private List<Sponsor> data = Collections.emptyList();
 
-    private static final String LOG_TAG = Sponsor.class.getName();
 
-    private ArrayList<Sponsor> mList;
-    private int mNumItems;
-
-    public SponsorAdapter(ArrayList<Sponsor> list){
-        mList = list;
-        mNumItems = list.size();
+    public SponsorAdapter(Context context, List<Sponsor> data) {
+        inflater = LayoutInflater.from(context);
+        this.data = data;
     }
 
 
     @Override
-    public SponsorAdapter.EventViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        Context context = parent.getContext();
-        // TODO(4): below layout should be sponsor_list_item.xml
-        int layoutIdForListItem = R.layout.fragment_sponsors;
-        LayoutInflater inflater = LayoutInflater.from(context);
-        boolean shouldAttachToParentImmediately = false;
-        View view = inflater.inflate(layoutIdForListItem, parent, shouldAttachToParentImmediately);
-        EventViewHolder viewHolder = new EventViewHolder(view);
-
-        return viewHolder;
+    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View rootview;
+        MyViewHolder myViewHolder;
+        rootview = inflater.inflate(R.layout.sponsor_list_item, parent, false);
+        myViewHolder = new MyViewHolder(rootview);
+        return myViewHolder;
 
     }
 
     @Override
-    public void onBindViewHolder(EventViewHolder holder, int position) {
-        holder.bind(mList.get(position));
+    public void onBindViewHolder(MyViewHolder holder, int position) {
+        holder.sponsor.setImageResource(data.get(position).getS_picture());
+        holder.name.setText(data.get(position).getS_name());
+        holder.level.setText(data.get(position).getS_level());
     }
-
-
-    // May need to use onBindViewHolder
-
-
 
 
     @Override
     public int getItemCount() {
-        return mNumItems;
+        return data.size();
     }
 
 
-    class EventViewHolder extends RecyclerView.ViewHolder{
+    public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView titleTextView;
-        TextView timeTextView;
-        TextView locationTextView;
+        ImageView sponsor;
+        TextView name;
+        TextView level;
 
-        public EventViewHolder(View itemView){
+
+        public MyViewHolder(View itemView) {
             super(itemView);
-
-            titleTextView = (TextView)itemView.findViewById(R.id.tv_event_name);
-            timeTextView = (TextView)itemView.findViewById(R.id.tv_event_time);
-            locationTextView = (TextView)itemView.findViewById(R.id.tv_event_location);
-        }
-
-        void bind(Sponsor event){
-            titleTextView.setText(event.getName());
-            timeTextView.setText(event.getPic());
-            locationTextView.setText(event.getMoney());
-
+            sponsor = itemView.findViewById(R.id.sponsor_logo);
+            name = itemView.findViewById(R.id.sponsor_company);
+            level = itemView.findViewById(R.id.sponsor_position);
         }
     }
-
-
 }

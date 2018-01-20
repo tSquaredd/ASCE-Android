@@ -74,20 +74,6 @@ public class SpeakerAdapter extends RecyclerView.Adapter<SpeakerAdapter.MyViewHo
 
     @Override
     public int getItemCount() {
-//        char ch = 'A';
-//        int num = 0;
-//        for (int i = 0; i < data.size(); i++) {
-//            if (i == 0) {
-//                ch = data.get(i).getName().charAt(0);
-//                num++;
-//            } else {
-//                if (ch != data.get(i).getName().charAt(0)) {
-//                    ch = data.get(i).getName().charAt(0);
-//                    num++;
-//                }
-//            }
-//        }
-//        Log.d("sum ", String.valueOf(data.size()+num));
         return data.size();
     }
 
@@ -132,20 +118,7 @@ public class SpeakerAdapter extends RecyclerView.Adapter<SpeakerAdapter.MyViewHo
 
     @Override
     public int getItemViewType(int position) {
-        if (data.get(position).isFirst() ==1)
-//            if (position == 0) {
-//                count = 0;
-//            }
-//            if (position != 0) {
-//                header_section[data.get(position - count).getName().charAt(0) - 65] = true;
-//            } else {
-//                header_section[data.get(position).getName().charAt(0) - 65] = true;
-//            }
-//            Log.d("position", position + " with index " + count);
-//            count++;
-            return TYPE_HEAD;
-//        }
-//        Log.d("position", position + " name " + data.get(position - count).getName() + " with index " + count);
+        if (data.get(position).isFirst() ==1) return TYPE_HEAD;
         return TYPE_LIST;
     }
     public void setFilter(List<Speaker> SpeakerList) {

@@ -1,17 +1,11 @@
 package org.ascebuffalo.asce;
 
 
-import android.app.Activity;
-import android.app.SearchManager;
-import android.content.Context;
-import android.content.pm.ActivityInfo;
-import android.graphics.Color;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.Html;
 import android.support.v7.widget.SearchView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,12 +14,8 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
-import com.twitter.sdk.android.core.models.Search;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.Locale;
 
 import Adapters.SpeakerAdapter;
 import Objects.Speaker;

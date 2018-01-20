@@ -1,15 +1,62 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal">
+    android:layout_height="60dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/custom_ripple_effect"
+    android:clickable="true"
+    android:focusable="true">
 
-    <!-- TODO(1): decide what you wnat for the layout of each sponsor. You can reference schedule_list_item.xml
-    and see how I did it for schedule
+    <ImageView
+        android:id="@+id/sponsor_logo"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/ic_person_pin" />
 
-    go back and forth between design and text views for schedule_list_item.xml and you can see how
-    i put in some fake text with tools:text and it makes it easy to plan the design-->
-  
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="10dp"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@id/sponsor_logo"
+        >
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/sponsor_company"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            tools:text="The name of the professor"
+            android:textSize="14sp"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="#111" />
+        <TextView
+            android:id="@+id/sponsor_position"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="top"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:layout_marginEnd="16dp"
+            tools:text="Towne LLC"
+            android:textSize="12sp"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="#757575"/>
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="#EEEEEE" />
+
+</RelativeLayout>

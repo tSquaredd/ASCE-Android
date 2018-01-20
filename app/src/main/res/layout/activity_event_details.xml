@@ -169,10 +169,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginBottom = "8dp"
                 android:text="@string/leaders"
                 android:visibility="gone"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/rv_event_details_presenters" />
+                app:layout_constraintTop_toBottomOf="@id/rv_event_details_presenters"
+                app:layout_constraintBottom_toTopOf="@id/rv_event_details_leaders" />
+
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rv_event_details_leaders"
@@ -182,8 +185,13 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:nestedScrollingEnabled="false"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_event_details_leaders_header" />
+
+
+
+
 
 
         </android.support.constraint.ConstraintLayout>
