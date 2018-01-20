@@ -144,8 +144,13 @@ public class MainActivity extends AppCompatActivity
                 setTitle("Maps");
                 break;
             case R.id.nav_entertainment:
-                current_fragment = new EntertainmentFragment();
-                setTitle("Entertainment");
+//                current_fragment = new EntertainmentFragment();
+//                setTitle("Entertainment");
+
+                // Alternate recomendations based on client specs
+                Intent entertainmentIntent = new Intent(Intent.ACTION_VIEW);
+                entertainmentIntent.setData(Uri.parse("http://ascebuffalo.org/recommendations/"));
+                startActivity(entertainmentIntent);
                 break;
             case R.id.nav_groupme:
                 Intent intent = new Intent(Intent.ACTION_VIEW);

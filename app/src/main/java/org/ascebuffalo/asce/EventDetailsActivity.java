@@ -119,17 +119,9 @@ public class EventDetailsActivity extends AppCompatActivity {
 
 
         mEventNameTextView.setText(mEvent.getTitle());
-        String temp = "Where: " + mEvent.getLocation();
-        ssb = new SpannableStringBuilder(temp);
-        ssb.setSpan(bold, 0, 5, Spanned.SPAN_INCLUSIVE_INCLUSIVE);
-        mEventLocationTextView.setText(ssb);
-
+        mEventLocationTextView.setText(mEvent.getLocation());
         mEventSectionsTextView.setText(mEvent.getSections());
-
-        temp = "When: " + mEvent.getTimeInterval();
-        ssb = new SpannableStringBuilder(temp);
-        ssb.setSpan(bold, 0, 4, Spanned.SPAN_INCLUSIVE_INCLUSIVE);
-        mEventTimeTextView.setText(ssb);
+        mEventTimeTextView.setText(mEvent.getTimeInterval());
 
         if(mEvent.getDescription() != null) {
             mEventDescTextView.setText(mEvent.getDescription());

@@ -50,9 +50,9 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:textAppearance="?android:textAppearanceMedium"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView4"
                 app:layout_constraintTop_toBottomOf="@id/tv_event_details_sections"
-                tools:text="Where: Ballroom" />
+                tools:text="Ballroom" />
 
             <TextView
                 android:id="@+id/tv_event_details_time"
@@ -61,9 +61,9 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:textAppearance="?android:textAppearanceMedium"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView2"
                 app:layout_constraintTop_toBottomOf="@id/tv_event_details_location"
-                tools:text="When: 4:30 - 5:30" />
+                tools:text="4:30 - 5:30" />
 
             <TextView
                 android:id="@+id/tv_event_details_header"
@@ -189,9 +189,25 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_event_details_leaders_header" />
 
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_event_details_location"
+                app:srcCompat="@drawable/ic_event_black_24dp" />
 
-
-
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_event_details_sections"
+                app:srcCompat="@drawable/ic_location_on_black_24dp" />
 
 
         </android.support.constraint.ConstraintLayout>
