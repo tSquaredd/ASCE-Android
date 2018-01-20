@@ -50,10 +50,10 @@ public class TwitterFragment extends Fragment {
 
         final SearchTimeline searchTimeline = new SearchTimeline.Builder()
                 .query("#MRLC")
-                .query("MRLC2018")
-                .query("ERYMC")
-                .query("ERYMC2018")
-                .query("ASCE")
+                .query("#MRLC2018")
+                .query("#ERYMC")
+                .query("#ERYMC2018")
+                .query("#ASCE")
                 .maxItemsPerRequest(100)
                 .build();
 
