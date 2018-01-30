@@ -4,44 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context="org.ascebuffalo.asce.EventMapFragment">
 
-    <FrameLayout
-        android:id="@+id/frame"
+    <android.support.design.widget.TabLayout
+        android:id="@+id/nav_map_tabs"
+        app:tabMode="scrollable"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary">
+        android:layout_gravity="center_horizontal"
+        android:background="@color/colorPrimary"
+        app:tabIndicatorColor="@color/white"
+        app:tabSelectedTextColor="@color/white"/>
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="@style/Widget.AppCompat.ActionBar"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="1dp">
-
-        </android.support.v7.widget.Toolbar>
-
-        <Spinner
-            android:id="@+id/spinner2"
-            android:layout_width="178dp"
-            android:layout_height="29dp"
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="100dp"
-            android:theme="@style/ThemeOverlay.AppCompat.Light"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="16dp" />
-    </FrameLayout>
-
-
-    <ImageView
-        android:id="@+id/floor_image"
+    <android.support.v4.view.ViewPager
+        android:id="@+id/map_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:adjustViewBounds="true"
-        android:src="@drawable/event_map_first_floor" />
-
+        />
 
 </LinearLayout>

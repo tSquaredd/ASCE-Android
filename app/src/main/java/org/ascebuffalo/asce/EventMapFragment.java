@@ -3,7 +3,11 @@ package org.ascebuffalo.asce;
 
 import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,13 +16,16 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
-import uk.co.senab.photoview.PhotoViewAttacher;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class EventMapFragment extends Fragment implements AdapterView.OnItemSelectedListener {
+public class EventMapFragment extends Fragment {
+
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+    private ViewPagerAdapter adapter;
 
 
     public EventMapFragment() {
@@ -31,43 +38,64 @@ public class EventMapFragment extends Fragment implements AdapterView.OnItemSele
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_event_map, container, false);
+        tabLayout = root.findViewById(R.id.nav_map_tabs);
+        viewPager = root.findViewById(R.id.map_pager);
 
-        Spinner spinner = root.findViewById(R.id.spinner2);
-//        AppCompatActivity activity =(AppCompatActivity) root.getContext();
-//        activity.getSupportActionBar();
-//        if(activity.getSupportActionBar()!=null){
-//            activity.getSupportActionBar().setElevation(0);
-//        }
+        adapter = new ViewPagerAdapter(getChildFragmentManager());
+        viewPager.setAdapter(adapter);
+        tabLayout.setupWithViewPager(viewPager);
 
-        ArrayAdapter adapter = ArrayAdapter.createFromResource(root.getContext(),R.array.floor,R.layout.event_map_spinner_item);
-        adapter.setDropDownViewResource(R.layout.event_map_spinner_dropdown_item);
-        spinner.getBackground().setColorFilter(getResources().getColor(R.color.whiteArrow), PorterDuff.Mode.SRC_ATOP);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
+
         return root;
     }
+    public class ViewPagerAdapter extends FragmentStatePagerAdapter{
 
-    @Override
-    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        ImageView photoView = getActivity().findViewById(R.id.floor_image);
-        photoView.setImageResource(R.drawable.event_map_second_floor);
-        PhotoViewAttacher photoViewAttacher;
-        switch(i){
-            case 0:
-                photoView.setImageResource(R.drawable.event_map_first_floor);
-                photoViewAttacher = new PhotoViewAttacher(photoView);
-                photoViewAttacher.update();
-                break;
-            case 1:
-                photoView.setImageResource(R.drawable.event_map_second_floor);
-                photoViewAttacher = new PhotoViewAttacher(photoView);
-                photoViewAttacher.update();
-                break;
+        public ViewPagerAdapter(FragmentManager fm) {
+            super(fm);
         }
-    }
 
-    @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {
+        @Override
+        public Fragment getItem(int position) {
+            Fragment fragment = new CustomFragment();
+            Bundle args = new Bundle();
+            int imageId = 0;
+            switch (position){
+                case 0:
+                    imageId = R.drawable.buffalo_airtport_terminate_map;
+                    break;
+                case 1:
+                    imageId= R.drawable.rail_map;
+                    break;
+                case 2:
+                    imageId = R.drawable.event_map_first_floor;
+                    break;
+                case 3:
+                    imageId = R.drawable.event_map_second_floor;
+                    break;
+            }
+            args.putInt("map",imageId);
+            fragment.setArguments(args);
+            return fragment;
+        }
 
+        @Override
+        public int getCount() {
+            return 4;
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            switch(position){
+                case 0:
+                    return "Airport";
+                case 1:
+                    return "NFTA Rail";
+                case 2:
+                    return "Hotel First Floor";
+                case 3:
+                    return "Hotel second Floor";
+            }
+            return null;
+        }
     }
 }
