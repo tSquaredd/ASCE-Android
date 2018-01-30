@@ -68,7 +68,11 @@ public class ProgramFragment extends Fragment {
             fos.close();
         } catch (Exception e) { throw new RuntimeException(e); }
 
-        programPdfView.fromFile(f).load();
+        programPdfView.fromFile(f)
+                .enableAntialiasing(true)
+                .enableSwipe(true)
+                .swipeHorizontal(false)
+                .spacing(4).load();
         return view;
 
 

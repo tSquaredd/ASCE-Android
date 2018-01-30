@@ -55,7 +55,11 @@ public class HomeFragment extends Fragment {
             fos.close();
         } catch (Exception e) { throw new RuntimeException(e); }
 
-        welcomePdfView.fromFile(f).load();
+        welcomePdfView.fromFile(f)
+                .enableAntialiasing(true)
+                .enableSwipe(true)
+                .swipeHorizontal(false)
+                .spacing(4).load();
 
         return view;
     }
