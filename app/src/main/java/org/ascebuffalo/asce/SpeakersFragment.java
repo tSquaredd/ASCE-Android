@@ -49,6 +49,10 @@ public class SpeakersFragment extends Fragment implements SearchView.OnQueryText
         adapter = new SpeakerAdapter(getActivity(),data, false);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setItemViewCacheSize(20);
+        recyclerView.setDrawingCacheEnabled(true);
+        recyclerView.setDrawingCacheQuality(View.DRAWING_CACHE_QUALITY_HIGH);
         setHasOptionsMenu(true);
 
         return root;
