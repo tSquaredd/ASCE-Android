@@ -4,12 +4,15 @@ package org.ascebuffalo.asce;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -68,7 +71,12 @@ implements ScheduleEventAdapter.ScheduleEventOnClickHandler{
         Context context = getContext();
         Class destinationClass = EventDetailsActivity.class;
         Intent intent = new Intent(context, destinationClass);
+
         intent.putExtra("event", event);
+
+
+
+
         startActivity(intent);
 
     }

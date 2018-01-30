@@ -4,10 +4,10 @@
     android:layout_height="match_parent"
     tools:context="org.ascebuffalo.asce.ProgramFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <com.github.barteksc.pdfviewer.PDFView
+        android:id="@+id/pdf_program"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello Program Fragment" />
+        android:layout_height="match_parent"/>
 
 </FrameLayout>

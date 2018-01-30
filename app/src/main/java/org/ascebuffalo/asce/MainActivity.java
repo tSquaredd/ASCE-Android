@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity
         switch(item.getItemId()){
             case R.id.nav_home:
                 current_fragment = new HomeFragment();
-                setTitle("home");
+                setTitle("Welcome");
                 break;
             case R.id.nav_schedule:
                 current_fragment = new ScheduleFragment();

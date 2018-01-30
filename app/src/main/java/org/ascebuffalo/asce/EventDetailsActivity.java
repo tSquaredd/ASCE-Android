@@ -2,6 +2,7 @@ package org.ascebuffalo.asce;
 
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -79,7 +80,6 @@ public class EventDetailsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_details);
-
         this.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
@@ -93,6 +93,7 @@ public class EventDetailsActivity extends AppCompatActivity {
                 mEvent = incomingIntent.getParcelableExtra("event");
             }
         }
+
 
 
         setViews();
