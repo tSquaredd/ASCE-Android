@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -43,6 +44,7 @@ public class Speaker_profile extends AppCompatActivity implements ScheduleEventA
 
         ImageView imageView = findViewById(R.id.main_backdrop);
         TextView textView = findViewById(R.id.speakers_name);
+        TextView speaker_bio = findViewById(R.id.speakers_text);
         Bundle bundle = getIntent().getExtras();
 
         Speaker speaker = bundle.getParcelable("speaker");
@@ -51,7 +53,7 @@ public class Speaker_profile extends AppCompatActivity implements ScheduleEventA
 
             imageView.setImageResource(speaker.getSelfie());
             textView.setText(speaker.getName());
-//            textView.setText(speaker.getBio());
+            speaker_bio.setText(speaker.getPosition());
         }
 
 
@@ -89,6 +91,10 @@ public class Speaker_profile extends AppCompatActivity implements ScheduleEventA
             else if (i.getModerators()!=null && Arrays.asList(i.getModerators()).contains(speaker_name)){
                 speaker_schedule.add(i);
             }
+        }
+        if(!speaker_schedule.isEmpty()){
+            TextView text = findViewById(R.id.speakers_event);
+            text.setVisibility(View.VISIBLE);
         }
         LinearLayoutManager manager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(manager);
