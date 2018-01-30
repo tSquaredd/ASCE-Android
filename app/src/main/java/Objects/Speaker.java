@@ -124,7 +124,7 @@ public class Speaker implements Parcelable {
                 "P.E., M.ASCE Region 1 Director",
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mollis est vitae erat laoreet consectetur. Mauris dui mauris, dictum vel egestas vel, porta sed ante. Phasellus congue viverra ipsum,"));
 
-        data.add(new Speaker(R.drawable.speaker_details_header,
+        data.add(new Speaker(R.drawable.jason_havens,
                 "Jason Havens",
                 0,
                 "P.E., M.ASCE, Buffalo Section President",
@@ -142,7 +142,7 @@ public class Speaker implements Parcelable {
                 "P.E., ENV SP, F.ASCE, ASCE 2018 President",
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mollis est vitae erat laoreet consectetur. Mauris dui mauris, dictum vel egestas vel, porta sed ante. Phasellus congue viverra ipsum,"));
 
-        data.add(new Speaker(R.drawable.speaker_details_header,
+        data.add(new Speaker(R.drawable.tom_smith,
                 "Tom Smith",
                 0,
                 "ENV SP, CAE, F.ASCE, Executive Director",
@@ -183,6 +183,12 @@ public class Speaker implements Parcelable {
                 "John Casana",
                 0,
                 "P.E., D.WRE, LEED AP, F.ASCE, Region 2 Director",
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mollis est vitae erat laoreet consectetur. Mauris dui mauris, dictum vel egestas vel, porta sed ante. Phasellus congue viverra ipsum,"));
+
+        data.add(new Speaker(R.drawable.john_mcgrath,
+                "John MCGrath",
+                0,
+                "MD, Interventional Radiologist, John R. Oishei Children’s Hospital and Gates Vascular Institute",
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mollis est vitae erat laoreet consectetur. Mauris dui mauris, dictum vel egestas vel, porta sed ante. Phasellus congue viverra ipsum,"));
 
         data.add(new Speaker(R.drawable.speaker_details_header,
@@ -233,13 +239,13 @@ public class Speaker implements Parcelable {
                 "P.E., M.ASCE",
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mollis est vitae erat laoreet consectetur. Mauris dui mauris, dictum vel egestas vel, porta sed ante. Phasellus congue viverra ipsum,"));
 
-        data.add(new Speaker(R.drawable.speaker_details_header,
+        data.add(new Speaker(R.drawable.kelly_dooley,
                 "Kelly Dooley",
                 0,
                 "P.E., M.ASCE, Director, Raise the Bar",
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mollis est vitae erat laoreet consectetur. Mauris dui mauris, dictum vel egestas vel, porta sed ante. Phasellus congue viverra ipsum,"));
 
-        data.add(new Speaker(R.drawable.speaker_details_header,
+        data.add(new Speaker(R.drawable.bethany_mazur,
                 "Bethany Mazur",
                 0,
                 "J.D., Director of Alumni and Constituent Engagement -University at Buffalo",
@@ -251,10 +257,16 @@ public class Speaker implements Parcelable {
                 "M.BA, CPA, Defense Contract Audit Agency",
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mollis est vitae erat laoreet consectetur. Mauris dui mauris, dictum vel egestas vel, porta sed ante. Phasellus congue viverra ipsum,"));
 
-        data.add(new Speaker(R.drawable.speaker_details_header,
+        data.add(new Speaker(R.drawable.stacy_kubit,
                 "Stacy M. Kubit",
                 0,
-                "P.E., WSP",
+                "P.E., WSP USA Inc.",
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mollis est vitae erat"));
+
+        data.add(new Speaker(R.drawable.rsz_steve_ranalli,
+                "Steven P.Ranalli",
+                0,
+                "P.E., Vice President of Waterfront Development, Empire State Development, Erie Canal Harbor Development Corporation",
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mollis est vitae erat"));
 
         data.add(new Speaker(R.drawable.speaker_details_header,
@@ -282,7 +294,7 @@ public class Speaker implements Parcelable {
                 "P.E., M.ASCE, Buffalo Section President",
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mollis est vitae erat laoreet consectetur. Mauris dui mauris, dictum vel egestas vel, porta sed ante. Phasellus congue viverra ipsum,"));
 
-        data.add(new Speaker(R.drawable.speaker_details_header,
+        data.add(new Speaker(R.drawable.kristina_swallow,
                 "Kristina Swallow",
                 1,
                 "P.E., ENV SP, F.ASCE, ASCE 2018 President",
@@ -306,7 +318,7 @@ public class Speaker implements Parcelable {
                 "P.E., F.ASCE, Region 5 Director",
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mollis est vitae erat laoreet consectetur. Mauris dui mauris, dictum vel egestas vel, porta sed ante. Phasellus congue viverra ipsum,"));
 
-        data.add(new Speaker(R.drawable.speaker_details_header,
+        data.add(new Speaker(R.drawable.rosanne_frandina,
                 "Robin Kemper",
                 1,
                 "P.E., LEED AP, F.SEI, F.ASCE, 2018 ASCE President-elect",

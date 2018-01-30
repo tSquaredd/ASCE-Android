@@ -45,9 +45,6 @@
     <string name="Tom_Smith"> ENV SP, CAE, F.ASCE, Executive Director </string>
 
 
-    <string name="Bio">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mollis est vitae erat laoreet consectetur. Mauris dui mauris, dictum vel egestas vel, porta sed ante. Phasellus congue viverra ipsum,
-    </string>
 
 
     <!-- activity_event_details.xml -->
