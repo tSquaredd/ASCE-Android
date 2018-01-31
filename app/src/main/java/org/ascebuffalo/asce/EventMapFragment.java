@@ -38,6 +38,7 @@ public class EventMapFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_event_map, container, false);
+        getActivity().setTitle("Maps");
         tabLayout = root.findViewById(R.id.nav_map_tabs);
         viewPager = root.findViewById(R.id.map_pager);
 

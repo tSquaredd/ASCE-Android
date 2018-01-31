@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
@@ -21,11 +22,8 @@ public class EntertainmentFragment extends Fragment {
 
 
 
-    @BindView(R.id.button_ent_see_do)
-    Button mSeeDoButton;
-
-    @BindView(R.id.button_ent_eat_drink)
-    Button mEatDrinkButton;
+   @BindView(R.id.web_view_entertainment)
+    WebView entWebView;
 
     public EntertainmentFragment() {
         // Required empty public constructor
@@ -38,30 +36,16 @@ public class EntertainmentFragment extends Fragment {
         // Inflate the layout for this fragment
 
         View view = inflater.inflate(R.layout.fragment_entertainment, container, false);
+        getActivity().setTitle("Entertainment");
         ButterKnife.bind(this, view);
 
-        setOnClickListeners();
+        entWebView.loadUrl("https://www.visitbuffaloniagara.com/");
+
 
         return view;
     }
 
-    public void setOnClickListeners(){
-        mEatDrinkButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), EatAndDrinkActivity.class);
-                startActivity(intent);
-            }
-        });
 
-        mSeeDoButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getContext(), SeeAndDoActivity.class);
-                startActivity(intent);
-            }
-        });
-    }
 
 
 

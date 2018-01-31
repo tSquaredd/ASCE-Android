@@ -39,6 +39,7 @@ public class ScheduleFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View result=inflater.inflate(R.layout.fragment_schedule, container, false);
+        getActivity().setTitle("Schedule");
         ViewPager pager=(ViewPager)result.findViewById(R.id.nav_pager);
 
         pager.setAdapter(new ScheduleAdapter(getActivity(), getChildFragmentManager()));

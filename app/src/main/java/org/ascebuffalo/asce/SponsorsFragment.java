@@ -31,6 +31,7 @@ public class SponsorsFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View root=inflater.inflate(R.layout.fragment_sponsors, container, false);
+        getActivity().setTitle("Sponsors");
 
         RecyclerView recyclerView = root.findViewById(R.id.recyclerView_sponsor);
         data = Sponsor.getData();

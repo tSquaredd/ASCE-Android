@@ -3,36 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="org.ascebuffalo.asce.EntertainmentFragment">
-
-  <LinearLayout
-      android:id="@+id/ll_root"
-      android:layout_centerVertical="true"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:orientation="vertical">
-      
-      
-     <Button
-         android:id="@+id/button_ent_see_do"
-        android:layout_marginStart="16dp"
-         android:layout_marginEnd="16dp"
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:text="See &amp; DO"/>
-
-      <Button
-          android:id="@+id/button_ent_eat_drink"
-          android:layout_marginEnd="16dp"
-          android:layout_marginStart="16dp"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          android:text="Eat &amp; Drink"/>
-      
-  </LinearLayout>
-
-
-
-
-
-
+ <WebView
+     android:id="@+id/web_view_entertainment"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"/>
 </RelativeLayout>

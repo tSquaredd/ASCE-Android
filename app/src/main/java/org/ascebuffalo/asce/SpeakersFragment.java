@@ -43,6 +43,7 @@ public class SpeakersFragment extends Fragment implements SearchView.OnQueryText
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_speakers, container, false);
+        getActivity().setTitle("Speakers");
 
         RecyclerView recyclerView = root.findViewById(R.id.recyclerView_speaker);
         data = Speaker.getData();

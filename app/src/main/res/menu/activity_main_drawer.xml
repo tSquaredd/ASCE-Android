@@ -34,6 +34,8 @@
             android:id="@+id/nav_entertainment"
             android:icon="@drawable/ic_local_dining"
             android:title="Entertainment"/>
+
+
     </group>
 
     <item android:title="Social Media">
@@ -46,6 +48,10 @@
                 android:id="@+id/nav_twitter"
                 android:icon="@drawable/ic_action_twitter"
                 android:title="Twitter" />
+            <item
+                android:id="@+id/nav_emergency"
+                android:icon="@drawable/ic_call_black_24dp"
+                android:title="Emergency Contact"/>
         </menu>
     </item>
 

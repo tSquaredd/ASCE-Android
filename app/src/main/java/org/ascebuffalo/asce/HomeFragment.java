@@ -38,6 +38,7 @@ public class HomeFragment extends Fragment {
 
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_home, container, false);
+        getActivity().setTitle("Welcome");
         ButterKnife.bind(this, view);
 
         File f = new File(getActivity().getCacheDir()+"/welcome.pdf");

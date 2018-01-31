@@ -120,36 +120,24 @@ public class MainActivity extends AppCompatActivity
         switch(item.getItemId()){
             case R.id.nav_home:
                 current_fragment = new HomeFragment();
-                setTitle("Welcome");
                 break;
             case R.id.nav_schedule:
                 current_fragment = new ScheduleFragment();
-                setTitle("Schedule");
                 break;
             case R.id.nav_speakers:
                 current_fragment = new SpeakersFragment();
-                setTitle("Speakers");
                 break;
             case R.id.nav_sponsors:
                 current_fragment = new SponsorsFragment();
-                setTitle("Sponsors");
                 break;
             case R.id.nav_program:
                 current_fragment = new ProgramFragment();
-                setTitle("Program");
                 break;
             case R.id.nav_event_map:
                 current_fragment = new EventMapFragment();
-                setTitle("Maps");
                 break;
             case R.id.nav_entertainment:
-//                current_fragment = new EntertainmentFragment();
-//                setTitle("Entertainment");
-
-                // Alternate recomendations based on client specs
-                Intent entertainmentIntent = new Intent(Intent.ACTION_VIEW);
-                entertainmentIntent.setData(Uri.parse("http://ascebuffalo.org/recommendations/"));
-                startActivity(entertainmentIntent);
+                current_fragment = new EntertainmentFragment();
                 break;
             case R.id.nav_groupme:
                 Intent intent = new Intent(Intent.ACTION_VIEW);
@@ -158,7 +146,11 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.nav_twitter:
                 current_fragment = new TwitterFragment();
-                setTitle("Twitter");
+                break;
+
+            case R.id.nav_emergency:
+//                current_fragment = new EmergencyFragment();
+                //TODO: for some reason this is crashing..
                 break;
         }
         drawer.closeDrawer(GravityCompat.START);

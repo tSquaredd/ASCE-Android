@@ -36,6 +36,7 @@ public class TwitterFragment extends Fragment {
         Twitter.initialize(getContext());
 
         View v = inflater.inflate(R.layout.fragment_twitter, container, false);
+        getActivity().setTitle("Twitter");
        mRecyclerView = (RecyclerView)v.findViewById(R.id.rv_twitter);
        mProgressBar = (ProgressBar)v.findViewById(R.id.pb_twitter);
         // Inflate the layout for this fragment
