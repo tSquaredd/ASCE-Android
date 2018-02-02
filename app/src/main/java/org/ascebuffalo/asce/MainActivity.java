@@ -149,8 +149,7 @@ public class MainActivity extends AppCompatActivity
                 break;
 
             case R.id.nav_emergency:
-//                current_fragment = new EmergencyFragment();
-                //TODO: for some reason this is crashing..
+                current_fragment = new EmergencyFragment();
                 break;
         }
         drawer.closeDrawer(GravityCompat.START);

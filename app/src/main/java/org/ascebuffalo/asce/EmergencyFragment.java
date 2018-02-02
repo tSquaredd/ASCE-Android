@@ -35,15 +35,15 @@ public class EmergencyFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_program, container, false);
+        View view = inflater.inflate(R.layout.fragment_emergency, container, false);
         getActivity().setTitle("Emergency");
 
         ButterKnife.bind(this, view);
 
-        File f = new File(getActivity().getCacheDir()+"/program.pdf");
+        File f = new File(getActivity().getCacheDir()+"/emergency.pdf");
         if (!f.exists()) try {
 
-            InputStream is = getActivity().getAssets().open("program.pdf");
+            InputStream is = getActivity().getAssets().open("emergency.pdf");
             int size = is.available();
             byte[] buffer = new byte[size];
             is.read(buffer);
