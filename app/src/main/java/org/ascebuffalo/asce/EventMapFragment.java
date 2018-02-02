@@ -68,11 +68,13 @@ public class EventMapFragment extends Fragment {
                     imageId= R.drawable.rail_map;
                     break;
                 case 2:
-                    imageId = R.drawable.event_map_first_floor;
+                    imageId = R.drawable.rail_map_schedule;
                     break;
                 case 3:
-                    imageId = R.drawable.event_map_second_floor;
+                    imageId = R.drawable.event_map_first_floor;
                     break;
+                case 4:
+                    imageId = R.drawable.event_map_second_floor;
             }
             args.putInt("map",imageId);
             fragment.setArguments(args);
@@ -81,7 +83,7 @@ public class EventMapFragment extends Fragment {
 
         @Override
         public int getCount() {
-            return 4;
+            return 5;
         }
 
         @Override
@@ -92,8 +94,10 @@ public class EventMapFragment extends Fragment {
                 case 1:
                     return "NFTA Rail";
                 case 2:
-                    return "Hotel First Floor";
+                    return "NFTA Rail Schedule";
                 case 3:
+                    return "Hotel First Floor";
+                case 4:
                     return "Hotel second Floor";
             }
             return null;

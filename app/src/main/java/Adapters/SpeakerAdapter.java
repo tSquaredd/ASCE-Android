@@ -52,7 +52,6 @@ public class SpeakerAdapter extends RecyclerView.Adapter<SpeakerAdapter.MyViewHo
             myViewHolder = new MyViewHolder(rootview, viewType);
             return myViewHolder;
         } else if (viewType == TYPE_HEAD) {
-            Log.d("viewType", String.valueOf(viewType));
             rootview = inflater.inflate(R.layout.head_layout, parent, false);
             myViewHolder = new MyViewHolder(rootview, viewType);
             return myViewHolder;
