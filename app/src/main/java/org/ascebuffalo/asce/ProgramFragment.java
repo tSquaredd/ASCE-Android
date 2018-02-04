@@ -13,6 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.github.barteksc.pdfviewer.PDFView;
@@ -40,6 +42,7 @@ public class ProgramFragment extends Fragment {
 
    @BindView(R.id.pdf_program)
     PDFView programPdfView;
+
 
     public ProgramFragment() {
         // Required empty public constructor
@@ -74,6 +77,10 @@ public class ProgramFragment extends Fragment {
                 .enableSwipe(true)
                 .swipeHorizontal(false)
                 .spacing(4).load();
+
+
+
+
         return view;
 
 
