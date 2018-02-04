@@ -85,6 +85,7 @@ public class SpeakerAdapter extends RecyclerView.Adapter<SpeakerAdapter.MyViewHo
         TextView position;
         TextView bio;
 
+
         TextView header;
 
         public MyViewHolder(View itemView, int viewType) {

@@ -98,38 +98,7 @@
                     android:layout_marginTop="12dp"
                     android:orientation="horizontal">
 
-                    <FrameLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="36dp"
-                        android:layout_marginRight="4dp"
-                        android:background="@drawable/bg_shadow">
 
-                        <ImageButton
-                            android:layout_width="100dp"
-                            android:layout_height="wrap_content"
-                            android:background="?attr/selectableItemBackgroundBorderless"
-                            android:clickable="true"
-                            android:focusable="true"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/btn_twitter_normal"
-                            android:textColor="@android:color/holo_blue_dark" />
-                    </FrameLayout>
-
-                    <FrameLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="36dp"
-                        android:layout_marginRight="4dp"
-                        android:background="@drawable/bg_shadow">
-
-                        <ImageButton
-                            android:layout_width="100dp"
-                            android:layout_height="wrap_content"
-                            android:background="?attr/selectableItemBackgroundBorderless"
-                            android:clickable="true"
-                            android:focusable="true"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/btn_website_normal" />
-                    </FrameLayout>
                 </LinearLayout>
             </LinearLayout>
 
@@ -156,7 +125,11 @@
                 android:id="@+id/speakers_detail_recyclerview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+
+           
         </LinearLayout>
+
+
 
 
     </android.support.v4.widget.NestedScrollView>

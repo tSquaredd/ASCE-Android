@@ -140,7 +140,12 @@ public class Speaker implements Parcelable {
                 "Kristina Swallow",
                 0,
                 "P.E., ENV SP, F.ASCE, ASCE 2018 President",
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mollis est vitae erat laoreet consectetur. Mauris dui mauris, dictum vel egestas vel, porta sed ante. Phasellus congue viverra ipsum,"));
+                "Since 2012, Kristina has been with the City of Las Vegas leading a team of engineers responsible for delivering public works projects and planning the sanitary sewer collection system. She negotiates design and construction contracts, reviews progress of the work, coordinates with public and private sector stakeholders, and responds to external comments or questions. Additionally, she advises on bicycle and pedestrian-related infrastructure, representing the City at the Nevada Legislature, participating in public meetings and guiding public outreach policy.\n\n" +
+                        "As ASCE's Congressional Fellow in 2009, Kristina landed a position in the Office of Senator Tom Udall as his lead on transportation policy. During that time, she worked\n\n" +
+                        "on the Federal Aviation Administration reauthorization bill and development and passage of the MAP-21 surface transportation authorization bill.\n\n" +
+                        "Kristina has been active in ASCE since 1995, serving on various society-level committees, such as Program and Finance, the Committees on Education, Diversity and Younger Members. She served as the Society’s appointed Governor on the Utility Engineering and Surveying Institute until her election as ASCE’s 2018 President.\n\n" +
+                        "In addition to her professional activities, Kristina is active in her community. She has served in leadership roles with the Junior League of Las Vegas, Southern Nevada Bicycle Coalition, Engineers Without Borders, and on the Advisory Board to the University of Nevada Department of Civil and Environmental Engineering and Construction.\n\n" +
+                        "Kristina earned her bachelor’s degree in civil engineering from the University of Arizona in 1994 and a master’s degree in civil and environmental engineering from the University of Nevada in 2004."));
 
         data.add(new Speaker(R.drawable.tom_smith,
                 "Tom Smith",

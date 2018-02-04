@@ -44,7 +44,7 @@ public class Speaker_profile extends AppCompatActivity implements ScheduleEventA
 
         ImageView imageView = findViewById(R.id.main_backdrop);
         TextView textView = findViewById(R.id.speakers_name);
-        TextView speaker_bio = findViewById(R.id.speakers_text);
+        TextView speaker_position = findViewById(R.id.speakers_text);
         Bundle bundle = getIntent().getExtras();
 
         Speaker speaker = bundle.getParcelable("speaker");
@@ -53,7 +53,9 @@ public class Speaker_profile extends AppCompatActivity implements ScheduleEventA
 
             imageView.setImageResource(speaker.getSelfie());
             textView.setText(speaker.getName());
-            speaker_bio.setText(speaker.getPosition());
+            speaker_position.setText(speaker.getPosition());
+
+
         }
 
 
