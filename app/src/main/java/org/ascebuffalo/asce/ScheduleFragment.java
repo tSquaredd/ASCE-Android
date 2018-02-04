@@ -8,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.DividerItemDecoration;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,7 +23,7 @@ import Objects.ScheduleEvent;
  */
 public class ScheduleFragment extends Fragment {
 
-    private ScheduleAdapter mScheduleAdapter;
+
     private ViewPager mViewPager;
     private ArrayList<ScheduleEvent> mEventList;
     private TabLayout mTabLayout;
@@ -40,12 +41,12 @@ public class ScheduleFragment extends Fragment {
 
         View result=inflater.inflate(R.layout.fragment_schedule, container, false);
         getActivity().setTitle("Schedule");
-        ViewPager pager=(ViewPager)result.findViewById(R.id.nav_pager);
+        mViewPager =(ViewPager)result.findViewById(R.id.nav_pager);
 
-        pager.setAdapter(new ScheduleAdapter(getActivity(), getChildFragmentManager()));
+        mViewPager.setAdapter(new ScheduleAdapter(getActivity(), getChildFragmentManager()));
 
         mTabLayout = (TabLayout)result.findViewById(R.id.nav_schedule_tabs);
-        mTabLayout.setupWithViewPager(pager);
+        mTabLayout.setupWithViewPager(mViewPager);
 
 
 
@@ -66,20 +67,19 @@ public class ScheduleFragment extends Fragment {
         public Fragment getItem(int position) {
 
             Fragment fragment;
-            ArrayList<ScheduleEvent> eventList;
             Bundle args = new Bundle();
             fragment = new DayScheduleFragment();
 
             if (position == 0){
                 // Friday
-                eventList = ScheduleEvent.fridayScheduleData();
+                mEventList = ScheduleEvent.fridayScheduleData();
 
             } else{
                 // Saturday
-                eventList = ScheduleEvent.saturdayEventSchedule();
+                mEventList = ScheduleEvent.saturdayEventSchedule();
             }
 
-            args.putParcelableArrayList("events", eventList);
+            args.putParcelableArrayList("events", mEventList);
             fragment.setArguments(args);
             return fragment;
         }
