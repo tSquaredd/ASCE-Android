@@ -275,6 +275,13 @@ public class Speaker implements Parcelable {
                 "P.E., F.ASCE, President and CEO, Mott MacDonald North America",
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mollis est vitae erat"));
 
+        data.add(new Speaker(R.drawable.erymc,
+                "Dr. John McGrath",
+                0,
+                "MD, Interventional Radiologist, John R. Oishei Children’s Hospital and Gates Vascular Institute",
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mollis est vitae erat laoreet consectetur. Mauris dui mauris, dictum vel egestas vel, porta sed ante. Phasellus congue viverra ipsum,"));
+
+
         // header
         data.add(new Speaker(R.drawable.erymc,
                 "Francis Mahaney",

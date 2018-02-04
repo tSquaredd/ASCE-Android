@@ -237,7 +237,7 @@ public class ScheduleEvent implements Parcelable{
 
         list.add(event);
 
-        event = new ScheduleEvent("Break",
+        event = new ScheduleEvent("Networking Break",
                 "9:15", "9:30",
                 "Pre-function Area",
                 null,
@@ -255,7 +255,7 @@ public class ScheduleEvent implements Parcelable{
 
         event = new ScheduleEvent("Flipping the Script on Networking",
                 "9:30", "10:30",
-                "ROOM**",
+                "Grand A,E,F,G",
                 presenterList,
                 null,
                 null,
@@ -264,7 +264,6 @@ public class ScheduleEvent implements Parcelable{
                 null);
 
         list.add(event);
-        // TODO: Not all leaders appearing
         leaderList = new String[4];
         leaderList[0] = "Chuck Black";
         leaderList[1] = "John Casana";
@@ -282,7 +281,11 @@ public class ScheduleEvent implements Parcelable{
                 "Join others from your region and learn new names and faces; " +
                         "acquire new skills with a fun filled icebreaker.\n" +
                         "Region leaders meet with their respective section / branch leaders, Younger member leaders " +
-                        "and Student chapter leaders.\n\nChuck Black: (ROOM**)\nJohn Casana: (ROOM**)\nPeter Moore: (ROOM**)\nTony Cioffi: (ROOM**)"
+                        "and Student chapter leaders.\n\n" +
+                        "Tony Cioffi: Region 1 -  Regency Ballroom\n" +
+                        "John Casana: Region 2 -  Grand E-F-G\n" +
+                        "Chuck Black: Region 4 -  Grand A\n" +
+                        "Peter Moore: Region 5 -  Delaware\n"
         );
 
         list.add(event);
@@ -398,11 +401,11 @@ public class ScheduleEvent implements Parcelable{
         moderatorList[0] = "Francis Mahaney";
 
         presenterList = new String[1];
-        presenterList[0] = "Charlie Mumford";
+        presenterList[0] = "Steven P.Ranalli";
 
-        event = new ScheduleEvent("How to execute a successful ASCE K-12 Outreach Event from start to finish",
+        event = new ScheduleEvent("Growing a Region: The Future of Buffalo's Waterfront",
                 "4:15", "5:15",
-                "ROOM**",
+                "Grand E-G",
                 presenterList,
                 moderatorList,
                 null,
@@ -420,7 +423,11 @@ public class ScheduleEvent implements Parcelable{
                 null,
                 null,
                 "WSBL / ERYMC / WSCL",
-                "Ticketed event. Appetizers and drink tickets provided. Location accesible by public tranist and/or walking.");
+                "Ticketed event. Appetizers and drink tickets provided. Location accesible by public tranist and/or walking.\n\n" +
+                        "Event Details:\n" +
+                        "6:00 - 8:00 Social @ Pearl Street Grill\n" +
+                        "7:00 - 10:00 Ice Skating @ Canalside\n" +
+                        "8:00 - 10:00 Curling @ Canalside");
 
         list.add(event);
 
@@ -541,7 +548,7 @@ public class ScheduleEvent implements Parcelable{
         presenterList = new String[1];
         presenterList[0] = "Nicholas M. DeNichilo";
 
-        event = new ScheduleEvent("ASCE Industry Leaders Council Keynote: \"XXXXX\"",
+        event = new ScheduleEvent("ASCE Industry Leaders Council Keynote: \"What Makes a Leader\"",
                 "12:35", "1:25",
                 "Grand B-G",
                 presenterList,
@@ -559,13 +566,14 @@ public class ScheduleEvent implements Parcelable{
         moderatorList[1] = "Jason Havens";
 
 
-        presenterList = new String[3];
+        presenterList = new String[4];
         presenterList[0] = "Bethany Mazur";
         presenterList[1] = "Jason Lang";
         presenterList[2] = "Kelly Dooley";
+        presenterList[3] = "Dr. John McGrath";
 
 
-        event = new ScheduleEvent("Should we Raise the Bar?",
+        event = new ScheduleEvent("How we Raise the Bar - Insights from other Industries",
                 "1:30", "2:30",
                 "Grand B-G",
                 null,
@@ -577,6 +585,31 @@ public class ScheduleEvent implements Parcelable{
 
         list.add(event);
 
+        event = new ScheduleEvent("Adjourn",
+                "3:00", "0",
+                "Regency Ballroom",
+                null,
+                null,
+                null,
+                null,
+                "WSBL",
+                null);
+
+        list.add(event);
+
+        event = new ScheduleEvent("Awards Dinner",
+                "5:00", "0",
+                "Grand B-G",
+                null,
+                null,
+                null,
+                null,
+                "WSBL/ERYMC",
+                "Ticketed event. Dress code is business casual. " +
+                        "Bus pickup will be on West Huron St, directly outside the hotel entrance." +
+                        " Buses will begin boarding at 4:30 PM.");
+
+        list.add(event);
         return list;
 
     }

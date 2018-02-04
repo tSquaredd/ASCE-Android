@@ -86,7 +86,10 @@ public class ScheduleEventAdapter extends RecyclerView.Adapter<ScheduleEventAdap
         void bind(ScheduleEvent event){
             titleTextView.setText(event.getTitle());
             startTimeTextView.setText(event.getStartTime());
-            endTimeTextView.setText(event.getEndTime());
+            if(!event.getEndTime().equals("0"))
+                endTimeTextView.setText(event.getEndTime());
+            else
+                endTimeTextView.setVisibility(View.INVISIBLE);
             if(event.getLocation() != null){
                 locationTextView.setText(event.getLocation());
                 locationTextView.setVisibility(View.VISIBLE);
