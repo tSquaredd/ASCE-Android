@@ -96,6 +96,7 @@ public class ScheduleFragment extends Fragment {
             }else{
                 return "Saturday";
             }
+            
         }
     }
 
