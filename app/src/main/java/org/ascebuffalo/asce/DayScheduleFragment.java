@@ -1,16 +1,21 @@
 package org.ascebuffalo.asce;
 
 
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.transition.TransitionInflater;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -75,11 +80,27 @@ implements ScheduleEventAdapter.ScheduleEventOnClickHandler{
 
 
     @Override
-    public void onClick(ScheduleEvent event) {
+    public void onClick(ScheduleEvent event, int position, View v) {
         Context context = getContext();
         Class destinationClass = EventDetailsActivity.class;
+
+        // Prepare transition
+        Fragment currentFragment = this;
+        currentFragment.setSharedElementReturnTransition(TransitionInflater.from(getContext())
+                .inflateTransition(R.transition.default_transition));
+
+        currentFragment.setExitTransition(TransitionInflater.from(getContext())
+        .inflateTransition(android.R.transition.no_transition));
+
+
         Intent intent = new Intent(context, destinationClass);
         intent.putExtra("event", event);
+        intent.putExtra("transition_name", "transition" + position);
+//        ActivityOptionsCompat options = ActivityOptionsCompat
+//                .makeSceneTransitionAnimation(getActivity(),
+//                        v,
+//                        "transition_event_name"
+//                        );
         startActivity(intent);
 
     }

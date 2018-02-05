@@ -95,6 +95,9 @@ public class EventDetailsActivity extends AppCompatActivity {
             if(incomingIntent.hasExtra("event")){
                 mEvent = incomingIntent.getParcelableExtra("event");
             }
+//            if(incomingIntent.hasExtra("transition_name")){
+//                mEventNameTextView.setTransitionName(incomingIntent.getStringExtra("transition_name"));
+//            }
         }
 
 

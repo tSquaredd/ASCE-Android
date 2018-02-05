@@ -1,5 +1,6 @@
 package Adapters;
 
+import android.app.ActivityOptions;
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -28,7 +29,7 @@ public class ScheduleEventAdapter extends RecyclerView.Adapter<ScheduleEventAdap
     final private ScheduleEventOnClickHandler mClickHandler;
 
     public interface ScheduleEventOnClickHandler{
-        void onClick(ScheduleEvent event);
+        void onClick(ScheduleEvent event, int position, View view);
     }
 
     public ScheduleEventAdapter( ArrayList<ScheduleEvent> list, ScheduleEventOnClickHandler handler){
@@ -54,6 +55,7 @@ public class ScheduleEventAdapter extends RecyclerView.Adapter<ScheduleEventAdap
     @Override
     public void onBindViewHolder(EventViewHolder holder, int position) {
         holder.bind(mList.get(position));
+        holder.titleTextView.setTransitionName("transition" + position);
     }
 
 
@@ -108,7 +110,7 @@ public class ScheduleEventAdapter extends RecyclerView.Adapter<ScheduleEventAdap
         public void onClick(View v) {
             int adapterPosition = getAdapterPosition();
             ScheduleEvent event = mList.get(adapterPosition);
-            mClickHandler.onClick(event);
+            mClickHandler.onClick(event, adapterPosition, v);
 
         }
     }

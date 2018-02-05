@@ -118,7 +118,7 @@ public class Speaker_profile extends AppCompatActivity implements ScheduleEventA
     }
 
     @Override
-    public void onClick(ScheduleEvent event) {
+    public void onClick(ScheduleEvent event, int position, View v) {
         Class destinationClass = EventDetailsActivity.class;
         Intent intent = new Intent(this, destinationClass);
         intent.putExtra("event", event);
